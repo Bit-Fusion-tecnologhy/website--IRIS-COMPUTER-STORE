@@ -1,0 +1,649 @@
+<main class="bg-surface pt-20">
+  <!-- 1. Hero Carousel -->
+  @defer (on viewport) {
+    @if (heroProducts().length > 0) {
+      <app-hero-carousel [products]="heroProducts()" />
+    }
+  } @placeholder {
+    <section class="mx-auto max-w-container-max px-gutter py-section-gap">
+      <div class="skeleton h-[380px] w-full rounded-xl"></div>
+    </section>
+  }
+
+  <!-- 2. Benefits Bar + CTA -->
+  @defer (on viewport) {
+    <app-benefits-bar />
+    <!-- Primary CTA -->
+    <section class="mx-auto max-w-container-max px-gutter pb-section-gap">
+      <div class="flex flex-col items-center gap-4 text-center">
+        <a routerLink="/catalog"
+           class="inline-flex items-center gap-3 rounded-lg bg-primary px-8 py-4 font-label-tech text-sm uppercase tracking-wider text-white transition-all hover:bg-primary/90 hover:scale-105 shadow-lg shadow-primary/25">
+          <span class="material-symbols-outlined text-[20px]">storefront</span>
+          Explorar Hardware
+        </a>
+        <p class="text-[13px] text-on-surface-variant">Componentes, periféricos y soluciones de alto rendimiento</p>
+      </div>
+    </section>
+  } @placeholder {
+    <section class="mx-auto max-w-container-max px-gutter py-section-gap">
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <div class="skeleton h-24 rounded-xl"></div>
+        <div class="skeleton h-24 rounded-xl"></div>
+        <div class="skeleton h-24 rounded-xl"></div>
+      </div>
+    </section>
+  }
+
+  <!-- 3. Categories Carousel -->
+  @defer (on viewport) {
+    @if (categories().length > 0) {
+      <app-category-carousel [categories]="categories()" [categoryImages]="categoryImages" />
+    }
+  } @placeholder {
+    <section class="mx-auto max-w-container-max px-gutter py-section-gap">
+      <div class="skeleton h-64 w-full rounded-xl"></div>
+    </section>
+  }
+
+  <!-- 4. Brands Showcase -->
+  @defer (on viewport) {
+    <app-brands-showcase />
+  } @placeholder {
+    <section class="mx-auto max-w-container-max px-gutter py-section-gap">
+      <div class="skeleton h-32 w-full rounded-xl"></div>
+    </section>
+  }
+
+
+  <!-- ========================================== -->
+  <!-- 5. ÚLTIMAS NOVEDADES (Cyber Tech Header & Infinite Carousel) -->
+  <!-- ========================================== -->
+  <section id="ultimas-novedades"
+    class="mx-auto max-w-container-max border-t border-white/10 bg-surface px-gutter py-section-gap animate-fade-in-up relative overflow-hidden">
+
+    <!-- Ambient Glow subtle background -->
+    <div class="pointer-events-none absolute -left-20 top-0 h-64 w-64 rounded-full bg-primary/10 blur-[100px]"></div>
+    <div class="pointer-events-none absolute -right-20 top-10 h-64 w-64 rounded-full bg-secondary/10 blur-[100px]"></div>
+
+    <!-- Encabezado Novedoso & Compacto -->
+    <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-6 relative z-10">
+      <!-- Columna Izquierda: Badge Tech + Titular + Microcopy -->
+      <div class="space-y-2 max-w-xl">
+
+        <div class="flex flex-wrap items-center gap-3">
+          <h2 class="font-headline-xl text-3xl sm:text-4xl font-bold tracking-tight text-white">
+            Últimas <span class="bg-iris-gradient bg-clip-text text-transparent">Novedades</span>
+          </h2>
+          <span class="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-0.5 font-label-tech text-[10px] font-bold uppercase tracking-wider text-primary">
+            <span class="material-symbols-outlined text-[13px]">bolt</span> Recién Llegados
+          </span>
+        </div>
+
+        <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+          Ingresos de hardware de última generación y periféricos de alto rendimiento recién ingresados a almacén.
+        </p>
+      </div>
+
+      <!-- Columna Derecha: Indicador de movimiento + Controles + Botón Explorar -->
+      <div class="flex flex-wrap items-center gap-3 shrink-0 self-start md:self-end">
+        <!-- Indicador de estado del carrusel -->
+
+        <!-- Botón Ver Novedades -->
+        <a routerLink="/catalog" [queryParams]="{ novedades: 'true' }"
+          class="iris-gradient-btn inline-flex items-center justify-center gap-2 rounded-lg px-5 py-2.5 font-label-tech text-xs font-bold uppercase tracking-wider text-white shadow-lg shadow-primary/20 hover:brightness-110 active:scale-95 transition-all">
+          <span>Ver Todo</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Carousel Track Draggable & Auto-scrolling continuo a la izquierda -->
+    <div #noveltyScrollContainer (pointerdown)="onPointerDown($event)" (pointermove)="onPointerMove($event)"
+      (pointerup)="onPointerUp($event)" (pointercancel)="onPointerCancel($event)" (mouseenter)="onMouseEnter()"
+      (mouseleave)="onMouseLeave()" (wheel)="onWheel($event)" [class.cursor-grab]="!isDragging()" [class.cursor-grabbing]="isDragging()"
+      class="novelty-track flex gap-4 sm:gap-6 overflow-x-auto select-none py-3 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      style="touch-action: pan-y;">
+
+      @for (item of noveltyTrack(); track $index) {
+      <article
+        class="group relative flex w-[260px] sm:w-[280px] shrink-0 flex-col rounded-lg border border-white/10 bg-surface-card p-4 transition-all duration-300 hover:border-primary/60 hover:shadow-xl hover:shadow-primary/10">
+        <!-- Badge Novedad -->
+        <div
+          class="absolute left-3 top-3 z-10 flex items-center gap-1.5 rounded bg-primary/20 backdrop-blur-md border border-primary/40 px-2.5 py-1 text-primary shadow-sm pointer-events-none">
+          <span class="material-symbols-outlined text-[13px]">auto_awesome</span>
+          <span class="font-label-tech text-[10px] font-bold uppercase tracking-wider">Novedad</span>
+        </div>
+
+        <!-- Imagen Visual-First -->
+        <a [routerLink]="['/product', item.id]" (click)="handleCardClick($event)"
+          class="relative mb-4 block aspect-square w-full overflow-hidden rounded bg-surface/80 p-4 transition-transform duration-500 group-hover:scale-[1.02]">
+          <div
+            class="h-full w-full bg-contain bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-105 pointer-events-none"
+            [style.background-image]="'url(' + item.image + ')'"></div>
+        </a>
+
+        <!-- Info Minimalista -->
+        <div class="flex flex-col flex-1">
+          <span
+            class="font-label-tech text-[10px] uppercase tracking-wider text-on-surface-variant truncate pointer-events-none">{{
+            item.subtitle || item.category }}</span>
+          <h3
+            class="mt-1 font-headline-md text-sm sm:text-base font-semibold text-on-surface group-hover:text-primary transition-colors line-clamp-2 min-h-11">
+            <a [routerLink]="['/product', item.id]" (click)="handleCardClick($event)">{{ item.name }}</a>
+          </h3>
+
+          <div class="mt-auto pt-4 flex items-center justify-between border-t border-white/5">
+            <div>
+              @if (item.originalPrice && item.originalPrice > item.price) {
+              <span class="block text-[11px] text-on-surface-variant line-through pointer-events-none">{{
+                item.originalPrice | currency:'USD':'symbol':'1.0-0' }}</span>
+              }
+              <span class="font-price-display text-base sm:text-lg font-bold text-white pointer-events-none">{{
+                item.price | currency:'USD':'symbol':'1.0-0' }}</span>
+            </div>
+            <button type="button" (click)="cart.add(item); $event.stopPropagation()"
+              [attr.aria-label]="'Agregar ' + item.name"
+              class="flex h-9 w-9 items-center justify-center rounded border border-primary text-primary transition-all hover:bg-primary hover:text-white active:scale-95 shadow-sm cursor-pointer">
+              <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+            </button>
+          </div>
+        </div>
+      </article>
+      }
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- 6. PRODUCTOS CON MEJOR VALORACIÓN (Community Top Rated) -->
+  <!-- ======================================================== -->
+  <section
+    class="mx-auto max-w-container-max border-t border-white/10 bg-surface px-gutter py-section-gap animate-fade-in-up">
+    <div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-star text-[18px]"
+            style="font-variation-settings: 'FILL' 1">verified</span>
+          <span class="font-label-tech text-xs uppercase tracking-widest text-star">Comunidad & Confianza</span>
+        </div>
+        <h2 class="mt-2 font-headline-xl text-3xl md:text-4xl font-bold text-on-surface">Productos con Mejor Valoración
+        </h2>
+        <p class="mt-1 text-sm text-on-surface-variant max-w-xl">Componentes evaluados con las más altas calificaciones
+          por compradores verificados en Bolivia.</p>
+      </div>
+      <a routerLink="/catalog" [queryParams]="{ sort: 'Mejor Evaluados' }"
+        class="inline-flex items-center gap-1 font-label-tech text-xs uppercase tracking-wider text-primary hover:text-white transition-colors">
+        Ver todos los mejor evaluados <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      @for (item of topRated(); track item.id) {
+      <article
+        class="group relative flex flex-col rounded-lg border border-white/10 bg-surface-card p-5 transition-all duration-300 hover:border-star/50 hover:shadow-xl hover:shadow-star/5">
+        <!-- Calificación Promedio Badge -->
+        <div class="mb-3 flex items-center justify-between">
+          <div class="flex items-center gap-1">
+            <span class="material-symbols-outlined text-star text-[16px]"
+              style="font-variation-settings: 'FILL' 1">star</span>
+            <span class="font-label-tech text-xs font-bold text-white">{{ item.averageRating?.toFixed(1) || '5.0'
+              }}</span>
+            <span class="text-[11px] text-on-surface-variant">({{ item.reviewCount || 12 }})</span>
+          </div>
+          <span
+            class="rounded bg-star/10 px-2 py-0.5 font-label-tech text-[10px] uppercase tracking-wider text-star border border-star/20">Top
+            Calidad</span>
+        </div>
+
+        <!-- Imagen del Producto -->
+        <a [routerLink]="['/product', item.id]"
+          class="relative mb-4 block aspect-square w-full overflow-hidden rounded bg-surface/60 p-4 transition-transform duration-500 group-hover:scale-105">
+          <div class="h-full w-full bg-contain bg-center bg-no-repeat mix-blend-screen"
+            [style.background-image]="'url(' + item.image + ')'"></div>
+        </a>
+
+        <!-- Detalles y Nombre -->
+        <span class="font-label-tech text-[10px] uppercase text-primary truncate block">{{ item.brand || item.category
+          }}</span>
+        <h3
+          class="mt-1 font-headline-md text-sm sm:text-base font-semibold text-on-surface group-hover:text-primary transition-colors line-clamp-2 min-h-11">
+          <a [routerLink]="['/product', item.id]">{{ item.name }}</a>
+        </h3>
+
+        <!-- Testimonio Destacado Corto -->
+        <div
+          class="mt-2 rounded bg-surface/50 border border-white/5 p-2.5 text-xs italic text-on-surface-variant line-clamp-2">
+          “Rendimiento y estabilidad impecables para cargas de trabajo exigentes.”
+        </div>
+
+        <!-- Footer con Precio y Botón -->
+        <div class="mt-auto pt-4 flex items-center justify-between border-t border-white/5">
+          <span class="font-price-display text-lg font-bold text-white">{{ item.price | currency:'USD':'symbol':'1.0-0'
+            }}</span>
+          <div class="flex items-center gap-2">
+            <a [routerLink]="['/product', item.id]" fragment="reviews"
+              class="flex h-9 items-center gap-1 rounded border border-white/10 px-2.5 text-xs text-on-surface-variant hover:text-white hover:border-white/30 transition-colors"
+              title="Leer reseñas">
+              <span class="material-symbols-outlined text-[16px]">rate_review</span>
+            </a>
+            <button (click)="cart.add(item)" [attr.aria-label]="'Comprar ' + item.name"
+              class="flex h-9 w-9 items-center justify-center rounded bg-primary text-on-primary font-bold transition-all hover:brightness-110">
+              <span class="material-symbols-outlined text-[18px]">shopping_cart</span>
+            </button>
+          </div>
+        </div>
+      </article>
+      }
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- 7. FRANJA OFICIAL NVIDIA GEFORCE (Proveedores Directos)       -->
+  <!-- ============================================================= -->
+  @defer (on viewport) {
+  <section id="nvidia-geforce" class="relative w-full overflow-hidden border-y border-[#76b900]/40 bg-[#050905] py-6 sm:py-8 animate-fade-in-up"
+    (mouseenter)="onGpuMouseEnter()" (mouseleave)="onGpuMouseLeave()"
+    [class.is-paused]="isGpuPaused()">
+
+    <!-- Resplandor dinámico de fondo -->
+    <div class="pointer-events-none absolute -top-24 left-1/4 h-72 w-72 rounded-full bg-[#76b900]/15 blur-3xl"></div>
+    <div class="pointer-events-none absolute -bottom-24 right-1/4 h-72 w-72 rounded-full bg-[#76b900]/20 blur-3xl"></div>
+
+    <!-- ENCABEZADO CENTRADO: Proveedor Directo Oficial -->
+    <div class="relative z-20 mx-auto max-w-container-max px-gutter text-center mb-2 sm:mb-4">
+
+      <h2 class="mt-2 font-headline-xl text-xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white leading-tight">
+        Distribuidores Directos de <span class="text-[#76b900] drop-shadow-[0_0_20px_rgba(118,185,0,0.55)]">NVIDIA GeForce RTX™</span>
+      </h2>
+
+      <p class="mt-1 text-xs sm:text-sm text-neutral-300 max-w-xl mx-auto leading-relaxed">
+        Importación oficial sin intermediarios con garantía de fábrica, stock inmediato en Santa Cruz y envíos asegurados a todo el país.
+      </p>
+    </div>
+
+    <!-- PISTA CINEMÁTICA A PANTALLA COMPLETA (100% SCREEN WIDTH) -->
+    <div class="relative w-full overflow-hidden py-4">
+      
+      <!-- Franja auténtica en el color de NVIDIA (#76B900) que atraviesa toda la pantalla de lado a lado -->
+      <div class="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 h-16 sm:h-20 md:h-24 w-full bg-gradient-to-r from-[#76b900]/80 via-[#8ae000] to-[#76b900]/80 shadow-[0_0_35px_rgba(118,185,0,0.45)] border-y border-[#76b900] overflow-hidden">
+        <div class="h-full w-full opacity-15 bg-[repeating-linear-gradient(-45deg,#000,#000_14px,transparent_14px,transparent_28px)]"></div>
+      </div>
+
+      <!-- Stage completo de tarjetas que recorren toda la pantalla de derecha a izquierda (una por una) -->
+      <div class="gpu-showcase-stage w-full">
+        @for (gpu of gpuShowcase; track gpu.id; let idx = $index) {
+          @if (currentGpuIndex() === idx) {
+          <div class="gpu-slide-item is-active gpu-traverse-track"
+            [class.gpu-manual-exit]="isManualExiting()">
+            
+            <a [routerLink]="gpu.link" class="group flex flex-col items-center cursor-pointer transition-transform hover:scale-105">
+              <!-- Tarjeta Gráfica en Alta Resolución sobresaliendo de la franja -->
+              <div class="relative h-36 sm:h-44 md:h-52 lg:h-56 w-full flex items-center justify-center">
+                <!-- Sombra de suelo hardware-accelerated suave debajo de la tarjeta -->
+                <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-48 sm:w-64 h-4 bg-black/75 blur-md rounded-full pointer-events-none"></div>
+                <img [src]="gpu.image" [alt]="gpu.name" loading="eager" decoding="async"
+                  class="relative z-10 max-h-full max-w-full object-contain drop-shadow-[0_12px_18px_rgba(0,0,0,0.7)] pointer-events-none" />
+              </div>
+
+              <!-- Tag Holográfico Flotante con Datos del Modelo -->
+              <div class="mt-2 inline-flex items-center gap-2 rounded-full border border-black/40 bg-black/90 px-4 py-1 backdrop-blur-md shadow-2xl">
+                <span class="h-1.5 w-1.5 rounded-full bg-[#76b900] animate-ping"></span>
+                <span class="font-label-tech text-[10px] sm:text-xs font-bold text-white tracking-wide">
+                  {{ gpu.name }}
+                </span>
+                <span class="rounded bg-[#76b900]/25 px-1.5 py-0.5 font-mono text-[9px] sm:text-[10px] font-bold text-[#76b900] border border-[#76b900]/30">
+                  {{ gpu.vram }}
+                </span>
+              </div>
+            </a>
+          </div>
+          }
+        }
+      </div>
+    </div>
+
+    <!-- CONTROLES Y BARRA DE CONFIANZA INFERIOR -->
+    <div class="relative z-20 mx-auto max-w-container-max px-gutter pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <!-- Selector Rápido de Tarjetas (en el mismo sentido Derecha -> Izquierda que las imágenes) -->
+      <div class="inline-flex flex-row-reverse items-center gap-1 rounded-lg border border-white/10 bg-black/60 p-1 backdrop-blur-sm">
+        @for (gpu of gpuShowcase; track gpu.id; let idx = $index) {
+        <button type="button" (click)="selectGpu(idx)"
+          [class.bg-[#76b900]]="currentGpuIndex() === idx"
+          [class.text-black]="currentGpuIndex() === idx"
+          [class.shadow-[0_0_12px_rgba(118,185,0,0.5)]]="currentGpuIndex() === idx"
+          [class.text-white]="currentGpuIndex() !== idx"
+          [class.hover:bg-white/10]="currentGpuIndex() !== idx"
+          class="rounded px-3 py-1 font-label-tech text-[10px] sm:text-xs font-bold uppercase transition-all cursor-pointer"
+          [attr.aria-label]="'Ver tarjeta ' + gpu.shortName">
+          {{ gpu.shortName }}
+        </button>
+        }
+      </div>
+
+      <!-- Botón Catálogo -->
+      <a [routerLink]="['/catalog']" [queryParams]="{ category: 'GPU' }"
+        class="inline-flex items-center gap-2 rounded-lg bg-[#76b900] px-4 py-2 font-label-tech text-xs font-bold uppercase tracking-wider text-black shadow-lg shadow-[#76b900]/25 transition-all hover:bg-[#8cee00] hover:scale-105 active:scale-95">
+        <span>Ver Todas las GPUs</span>
+        <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+      </a>
+    </div>
+
+  </section>
+  } @placeholder {
+  <section class="w-full py-8 sm:py-10 bg-[#050905]">
+    <div class="skeleton h-64 w-full"></div>
+  </section>
+  }
+
+  <!-- ======================================================== -->
+  <!-- 8. COMBOS & SETUP BUILDER (Arma tu combo personalizado)   -->
+  <!-- ======================================================== -->
+  @defer (on viewport) {
+  <section id="combos"
+    class="mx-auto max-w-container-max border-t border-white/10 bg-surface px-gutter py-section-gap animate-fade-in-up">
+    <!-- Header -->
+    <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-secondary text-[18px]">view_in_ar</span>
+          <span class="font-label-tech text-xs uppercase tracking-widest text-secondary">Ahorro Inteligente</span>
+        </div>
+        <h2 class="mt-2 font-headline-xl text-3xl md:text-4xl font-bold text-on-surface">Arma tu Combo a Precio Más Bajo
+        </h2>
+        <p class="mt-1 text-sm text-on-surface-variant max-w-2xl">
+          Personaliza tu propio combo con 2 o más componentes de cualquier categoría y obtén hasta un <strong>15% de
+            descuento directo</strong> en tu paquete.
+        </p>
+      </div>
+
+      <!-- Presets Rápidos -->
+      <div class="flex flex-wrap items-center gap-2">
+        <span class="text-xs text-on-surface-variant font-label-tech uppercase">Cargar Sugerencia:</span>
+        <button (click)="applyComboPreset('gamer')"
+          class="rounded border border-white/10 bg-surface-card px-3 py-1.5 text-xs font-label-tech uppercase text-on-surface hover:border-primary hover:text-primary transition-colors">
+          🎮 Gamer Master
+        </button>
+        <button (click)="applyComboPreset('peripherals')"
+          class="rounded border border-white/10 bg-surface-card px-3 py-1.5 text-xs font-label-tech uppercase text-on-surface hover:border-primary hover:text-primary transition-colors">
+          ⌨️ Periféricos Pro
+        </button>
+        <button (click)="applyComboPreset('creator')"
+          class="rounded border border-white/10 bg-surface-card px-3 py-1.5 text-xs font-label-tech uppercase text-on-surface hover:border-primary hover:text-primary transition-colors">
+          🚀 Workstation
+        </button>
+      </div>
+    </div>
+
+    <!-- Escenario Interactivo del Combo -->
+    <div class="rounded-xl border border-white/10 bg-surface-card p-6 md:p-8">
+      <!-- Grid de Componentes Seleccionados -->
+      @if (selectedComboProducts().length > 0) {
+      <div class="flex flex-wrap items-center justify-center gap-4 lg:gap-6">
+        @for (item of selectedComboProducts(); track item.id; let last = $last) {
+        <div
+          class="relative flex w-full max-w-[240px] flex-col rounded-lg border border-white/10 bg-surface p-4 transition-all hover:border-primary">
+          <!-- Botón Eliminar -->
+          <button (click)="removeFromCombo(item.id)"
+            class="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-error-container text-on-error-container hover:bg-error hover:text-white transition-colors"
+            title="Quitar este producto">
+            <span class="material-symbols-outlined text-[14px]">close</span>
+          </button>
+
+          <div class="relative aspect-square w-full overflow-hidden rounded bg-surface-card p-2 mb-3">
+            <div class="h-full w-full bg-contain bg-center bg-no-repeat"
+              [style.background-image]="'url(' + item.image + ')'"></div>
+          </div>
+
+          <span class="font-label-tech text-[10px] uppercase text-primary truncate">{{ item.category }}</span>
+          <h4 class="font-headline-md text-xs font-semibold text-on-surface line-clamp-1 mt-0.5">{{ item.name }}</h4>
+          <div class="mt-2 pt-2 border-t border-white/5 flex items-center justify-between">
+            <span class="text-[11px] text-on-surface-variant">Precio normal:</span>
+            <span class="font-price-display text-sm font-bold text-white">{{ item.price |
+              currency:'USD':'symbol':'1.0-0' }}</span>
+          </div>
+        </div>
+
+        <!-- Conector "+" entre productos -->
+        @if (!last) {
+        <div
+          class="hidden lg:flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-surface text-primary">
+          <span class="material-symbols-outlined text-lg font-bold">add</span>
+        </div>
+        }
+        }
+
+        <!-- Botón para Agregar Más Productos -->
+        <button (click)="openPicker()"
+          class="flex min-h-[220px] w-full max-w-[240px] flex-col items-center justify-center rounded-lg border-2 border-dashed border-white/20 bg-surface/40 p-4 text-center hover:border-primary hover:bg-primary/5 transition-all group cursor-pointer">
+          <div
+            class="flex h-12 w-12 items-center justify-center rounded-full border border-white/20 bg-surface group-hover:border-primary group-hover:text-primary transition-colors">
+            <span class="material-symbols-outlined text-2xl">add</span>
+          </div>
+          <span class="mt-3 font-headline-md text-sm font-semibold text-on-surface group-hover:text-primary">Agregar
+            Componente</span>
+          <span class="mt-1 text-xs text-on-surface-variant">Suma más productos y aumenta tu descuento</span>
+        </button>
+      </div>
+      } @else {
+      <!-- Estado Vacío -->
+      <div class="flex flex-col items-center justify-center py-12 text-center">
+        <span class="material-symbols-outlined text-5xl text-on-surface-variant">inventory_2</span>
+        <h3 class="mt-3 font-headline-md text-lg font-bold text-white">Tu combo está vacío</h3>
+        <p class="mt-1 text-xs text-on-surface-variant max-w-sm">
+          Selecciona productos para armar tu configuración personalizada y obtener precios reducidos exclusivos.
+        </p>
+        <button (click)="openPicker()"
+          class="mt-5 inline-flex items-center gap-2 rounded bg-primary px-6 py-2.5 font-label-tech text-xs font-bold uppercase text-on-primary hover:brightness-110 cursor-pointer">
+          <span class="material-symbols-outlined text-base">add_circle</span>
+          Elegir Primer Producto
+        </button>
+      </div>
+      }
+
+      <!-- Barra de Resumen de Precios y Acción -->
+      @if (selectedComboProducts().length > 0) {
+      <div class="mt-8 flex flex-col md:flex-row items-center justify-between gap-6 border-t border-white/10 pt-6">
+        <div class="flex flex-wrap items-center gap-4 text-center md:text-left">
+          <div>
+            <span class="block text-xs text-on-surface-variant font-label-tech uppercase">Productos en Combo:</span>
+            <span class="text-sm font-bold text-white">{{ selectedComboProducts().length }} artículos</span>
+          </div>
+
+          <div class="h-8 w-px bg-white/10 hidden sm:block"></div>
+
+          <div>
+            <span class="block text-xs text-on-surface-variant font-label-tech uppercase">Subtotal normal:</span>
+            <span class="text-sm line-through text-on-surface-variant">{{ comboSubtotal() |
+              currency:'USD':'symbol':'1.0-0' }}</span>
+          </div>
+
+          <div class="h-8 w-px bg-white/10 hidden sm:block"></div>
+
+          <div>
+            <span class="block text-xs text-secondary font-label-tech uppercase">Descuento aplicado:</span>
+            <span class="text-sm font-bold text-secondary">
+              @if (comboDiscountRate() > 0) {
+              -{{ (comboDiscountRate() * 100).toFixed(0) }}% (-{{ comboDiscountAmount() |
+              currency:'USD':'symbol':'1.0-0' }})
+              } @else {
+              Agrega 1 más para 8% OFF
+              }
+            </span>
+          </div>
+
+          <div class="h-8 w-px bg-white/10 hidden sm:block"></div>
+
+          <div>
+            <span class="block text-xs text-primary font-label-tech uppercase">Precio Final Combo:</span>
+            <span class="font-price-display text-2xl font-bold text-white">{{ comboTotalPrice() |
+              currency:'USD':'symbol':'1.0-0' }}</span>
+          </div>
+        </div>
+
+        <!-- Acciones de Compra -->
+        <div class="flex items-center gap-3 w-full md:w-auto">
+          <button (click)="clearCombo()"
+            class="rounded border border-white/10 px-4 py-3 text-xs font-label-tech uppercase text-on-surface-variant hover:text-white hover:border-white/30 transition-colors cursor-pointer"
+            title="Vaciar combo">
+            Limpiar
+          </button>
+          <button (click)="addComboToCart()"
+            class="flex flex-1 md:flex-initial items-center justify-center gap-2 rounded bg-iris-gradient px-6 py-3 font-label-tech text-xs font-bold uppercase tracking-wider text-white shadow-lg transition-all hover:brightness-110 active:scale-95 cursor-pointer">
+            <span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+            <span>Añadir Combo al Carrito</span>
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+
+    <!-- Modal / Drawer de Selección de Producto para el Combo -->
+    @if (isPickerOpen()) {
+    <div
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-fade-in-up">
+      <div
+        class="relative flex flex-col h-full max-h-[85vh] w-full max-w-4xl rounded-xl border border-white/20 bg-surface-card shadow-2xl overflow-hidden">
+        <!-- Header Modal -->
+        <div class="flex items-center justify-between border-b border-white/10 p-5">
+          <div>
+            <h3 class="font-headline-md text-lg font-bold text-white">Selecciona un Componente para tu Combo</h3>
+            <p class="text-xs text-on-surface-variant">Puedes elegir cualquier hardware o accesorio del catálogo Iris.
+            </p>
+          </div>
+          <button (click)="closePicker()"
+            class="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-on-surface-variant hover:text-white hover:border-white transition-colors cursor-pointer">
+            <span class="material-symbols-outlined text-lg">close</span>
+          </button>
+        </div>
+
+        <!-- Filtros y Búsqueda -->
+        <div class="flex flex-col sm:flex-row gap-3 border-b border-white/10 p-4 bg-surface/50">
+          <div class="relative flex-1">
+            <input type="text" [ngModel]="pickerSearch()" (ngModelChange)="pickerSearch.set($event)"
+              placeholder="Buscar por nombre, modelo o marca..."
+              class="w-full rounded border border-white/10 bg-surface-card px-3 py-2 pl-9 text-xs text-white placeholder-on-surface-variant outline-none focus:border-primary" />
+            <span
+              class="material-symbols-outlined absolute left-2.5 top-2.5 text-[16px] text-on-surface-variant">search</span>
+          </div>
+
+          <!-- Pestañas de Categoría -->
+          <div class="flex flex-wrap gap-1">
+            @for (cat of ['ALL', 'GPU', 'CPU', 'PERIPHERAL', 'MEMORY', 'DISPLAYS', 'SYSTEMS']; track cat) {
+            <button (click)="pickerCategory.set(cat)" [class.bg-primary]="pickerCategory() === cat"
+              [class.text-on-primary]="pickerCategory() === cat" [class.bg-surface-card]="pickerCategory() !== cat"
+              [class.text-on-surface-variant]="pickerCategory() !== cat"
+              class="rounded border border-white/10 px-2.5 py-1.5 font-label-tech text-[10px] uppercase font-bold transition-colors cursor-pointer">
+              {{ cat }}
+            </button>
+            }
+          </div>
+        </div>
+
+        <!-- Lista de Productos Disponibles -->
+        <div class="flex-1 overflow-y-auto p-4">
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+            @for (prod of filteredPickerProducts(); track prod.id) {
+            <div
+              class="flex flex-col rounded-lg border border-white/10 bg-surface p-3 transition-all hover:border-primary">
+              <div class="relative aspect-square w-full overflow-hidden rounded bg-surface-card p-2 mb-2">
+                <div class="h-full w-full bg-contain bg-center bg-no-repeat"
+                  [style.background-image]="'url(' + prod.image + ')'"></div>
+              </div>
+              <span class="font-label-tech text-[9px] uppercase text-primary truncate">{{ prod.category }}</span>
+              <h4 class="font-headline-md text-xs font-medium text-on-surface line-clamp-2 min-h-8">{{ prod.name }}</h4>
+              <div class="mt-auto pt-2 flex items-center justify-between border-t border-white/5">
+                <span class="font-price-display text-xs font-bold text-white">{{ prod.price |
+                  currency:'USD':'symbol':'1.0-0' }}</span>
+                @if (isProductInCombo(prod.id)) {
+                <button (click)="removeFromCombo(prod.id)"
+                  class="rounded bg-primary/20 border border-primary text-primary px-2 py-1 text-[10px] font-label-tech uppercase cursor-pointer">
+                  Quitar
+                </button>
+                } @else {
+                <button (click)="addToCombo(prod)"
+                  class="rounded bg-primary px-2.5 py-1 text-[10px] font-label-tech font-bold uppercase text-on-primary hover:brightness-110 cursor-pointer">
+                  + Agregar
+                </button>
+                }
+              </div>
+            </div>
+            }
+          </div>
+        </div>
+
+        <!-- Footer Modal -->
+        <div class="flex items-center justify-between border-t border-white/10 p-4 bg-surface">
+          <span class="text-xs text-on-surface-variant">
+            {{ selectedComboProducts().length }} producto(s) en tu combo actual.
+          </span>
+          <button (click)="closePicker()"
+            class="rounded bg-primary px-5 py-2 font-label-tech text-xs font-bold uppercase text-on-primary cursor-pointer">
+            Listo / Volver
+          </button>
+        </div>
+      </div>
+    </div>
+    }
+  </section>
+  } @placeholder {
+  <section class="mx-auto max-w-container-max px-gutter py-section-gap">
+    <div class="skeleton h-80 w-full rounded-xl"></div>
+  </section>
+  }
+
+  <!-- WhatsApp Consultation -->
+  @defer (on viewport) {
+    <section class="mx-auto max-w-container-max bg-surface px-gutter pb-section-gap animate-fade-in-up">
+      <div class="relative flex flex-col items-center gap-12 overflow-hidden rounded-xl border border-white/10 bg-surface-card p-8 md:flex-row md:p-16">
+        <div class="pointer-events-none absolute top-0 right-0 h-full w-1/2 bg-gradient-to-l from-primary/10 to-transparent"></div>
+        <div class="pointer-events-none absolute -right-24 -bottom-24 h-64 w-64 rounded-full bg-primary/20 blur-3xl"></div>
+
+        <div class="relative z-10 flex-1 text-center md:text-left">
+          <div class="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full border border-white/10 bg-surface glow-primary">
+            <span class="material-symbols-outlined text-[32px] text-primary">support_agent</span>
+          </div>
+          <h2 class="mb-4 font-headline-lg text-headline-lg text-on-surface">Asesoría Especializada vía WhatsApp</h2>
+          <p class="mx-auto mb-8 max-w-md font-body-lg text-body-lg text-on-surface-variant md:mx-0">
+            ¿Necesitas ayuda configurando tu máquina ideal? Conéctate directamente con nuestros especialistas en hardware para recomendaciones a medida y cotizaciones empresariales.
+          </p>
+          <a routerLink="/contact" class="inline-flex items-center gap-3 rounded border border-white/20 bg-surface px-8 py-4 font-label-tech text-label-tech uppercase text-on-surface transition-all hover:bg-surface-bright">
+            <span class="material-symbols-outlined text-accent-cyan">chat</span>
+            <span>Iniciar Conversación</span>
+          </a>
+        </div>
+
+        <div class="relative z-10 w-full max-w-sm flex-1">
+          <div class="relative rounded-lg border border-white/10 bg-surface-dark p-6 shadow-2xl md:rotate-3">
+            <div class="mb-6 flex items-center gap-4 border-b border-white/5 pb-4">
+              <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary-container font-headline-md font-bold text-white">I</div>
+              <div>
+                <h4 class="font-label-tech text-label-tech text-on-surface">Equipo de Ventas Iris</h4>
+                <span class="flex items-center gap-1 text-[12px] text-accent-cyan">
+                  <span class="block h-2 w-2 rounded-full bg-accent-cyan"></span>En Línea
+                </span>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="inline-block max-w-[85%] rounded-r-lg rounded-bl-lg border border-white/5 bg-surface-card p-3 text-sm text-on-surface-variant">
+                ¡Hola! ¿Estás buscando armar un sistema con refrigeración líquida personalizada para edición en 8K?
+              </div>
+              <div class="flex justify-end">
+                <div class="inline-block max-w-[85%] rounded-l-lg rounded-br-lg border border-primary/30 bg-primary/20 p-3 text-sm text-on-surface">
+                  Sí, priorizando estabilidad y tiempos de renderizado. ¿Qué componentes me recomiendan?
+                </div>
+              </div>
+              <div class="inline-flex max-w-[85%] items-center gap-2 rounded-r-lg rounded-bl-lg border border-white/5 bg-surface-card p-3 text-sm text-on-surface-variant">
+                <span class="h-2 w-2 animate-pulse rounded-full bg-primary"></span>
+                <span class="h-2 w-2 animate-pulse rounded-full bg-primary delay-75"></span>
+                <span class="h-2 w-2 animate-pulse rounded-full bg-primary delay-150"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  } @placeholder {
+    <section class="mx-auto max-w-container-max px-gutter pb-section-gap">
+      <div class="skeleton h-64 w-full rounded"></div>
+    </section>
+  }
+</main>

@@ -1,0 +1,100 @@
+<main class="mx-auto min-h-screen max-w-container-max px-3 pb-20 pt-28 md:px-gutter">
+  <!-- Header -->
+  <div class="mb-8 flex flex-col items-start justify-between gap-4 border-b border-white/10 pb-6 md:flex-row md:items-end">
+    <div>
+      <div class="mb-2 flex items-center gap-2 font-label-tech text-xs uppercase text-on-surface-variant">
+        <a routerLink="/" class="hover:text-primary transition-colors">Inicio</a>
+        <i class="material-symbols-outlined text-[10px]">chevron_right</i>
+        <span class="text-primary">Favoritos</span>
+      </div>
+      <h1 class="font-headline-xl text-2xl font-bold md:text-4xl text-on-surface">Hardware Guardado</h1>
+      <p class="mt-2 text-xs sm:text-sm text-on-surface-variant">
+        Tus componentes y workstations favoritas listas para tu próxima actualización de equipo.
+      </p>
+    </div>
+
+    @if (wishlist.items().length > 0) {
+      <div class="flex items-center gap-3">
+        <button 
+          type="button" 
+          (click)="moveAllToCart()" 
+          class="iris-gradient-btn flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded text-xs font-bold text-white uppercase tracking-wider">
+          <i class="material-symbols-outlined text-base">shopping_cart</i>
+          <span>Mover Todo al Carrito</span>
+        </button>
+        <button 
+          type="button" 
+          (click)="wishlist.clear()" 
+          class="px-3 sm:px-4 py-2.5 rounded border border-white/10 text-xs text-on-surface-variant hover:text-error hover:border-error/40 transition-colors">
+          Vaciar Lista
+        </button>
+      </div>
+    }
+  </div>
+
+  <!-- Estado Vacío -->
+  @if (wishlist.items().length === 0) {
+    <div class="my-12 rounded border border-white/10 bg-surface-card p-8 sm:p-12 text-center max-w-xl mx-auto">
+      <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-surface border border-white/10 text-on-surface-variant">
+        <i class="material-symbols-outlined text-4xl">favorite_border</i>
+      </div>
+      <h2 class="font-headline-md text-xl sm:text-2xl font-bold mb-2">Tu lista de favoritos está vacía</h2>
+      <p class="text-xs sm:text-sm text-on-surface-variant mb-6">
+        Haz clic en el icono de corazón en cualquier producto del catálogo para guardarlo aquí.
+      </p>
+      <a routerLink="/catalog" class="iris-gradient-btn inline-flex items-center gap-2 px-6 py-3 rounded text-xs font-bold text-white uppercase tracking-wider">
+        <i class="material-symbols-outlined text-base">storefront</i>
+        Explorar Productos
+      </a>
+    </div>
+  } @else {
+    <!-- Grilla de Favoritos (2 columnas en móviles) -->
+    <div class="grid grid-cols-2 gap-3 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      @for (product of wishlist.items(); track product.id) {
+        <article class="product-card group relative flex flex-col overflow-hidden rounded border border-white/10 bg-surface-card transition-all hover:border-primary/50">
+          <!-- Botón Eliminar de Favoritos -->
+          <button 
+            type="button" 
+            (click)="wishlist.remove(product.id)" 
+            title="Quitar de favoritos" 
+            class="absolute top-2 right-2 sm:top-3 sm:right-3 z-20 flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-surface/90 border border-white/10 text-primary hover:text-error hover:border-error transition-colors backdrop-blur">
+            <i class="material-symbols-outlined text-sm sm:text-base">favorite</i>
+          </button>
+
+          <!-- Imagen del Producto -->
+          <a [routerLink]="['/product', product.id]" class="relative flex h-36 sm:h-60 w-full items-center justify-center bg-surface p-2 sm:p-4">
+            <img [src]="product.image" [alt]="product.name" loading="lazy" decoding="async" class="h-full w-full object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105" />
+          </a>
+
+          <!-- Info del Producto -->
+          <div class="flex flex-1 flex-col border-t border-white/10 p-3 sm:p-5">
+            <div class="mb-1 sm:mb-2 flex items-center justify-between">
+              <span class="font-label-tech text-[9px] sm:text-[10px] uppercase tracking-widest text-primary truncate max-w-[100px]">{{ product.subtitle }}</span>
+              @if (product.brand) {
+                <span class="text-[9px] sm:text-[10px] text-on-surface-variant font-label-tech">{{ product.brand }}</span>
+              }
+            </div>
+
+            <h2 class="mb-2 font-headline-md text-xs sm:text-base leading-tight text-on-surface hover:text-primary transition-colors line-clamp-2">
+              <a [routerLink]="['/product', product.id]">{{ product.name }}</a>
+            </h2>
+
+            <div class="mt-auto flex items-end justify-between pt-2 sm:pt-4 border-t border-white/5">
+              <div class="font-price-display text-sm sm:text-xl font-bold text-on-surface">
+                {{ product.price | currency:'USD':'symbol':'1.0-0' }}
+              </div>
+
+              <button 
+                type="button" 
+                (click)="moveToCart(product)" 
+                class="iris-gradient-btn flex items-center gap-1 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded text-[10px] sm:text-xs font-bold text-white uppercase tracking-wider hover:scale-105 transition-transform">
+                <i class="material-symbols-outlined text-xs sm:text-sm">add_shopping_cart</i>
+                <span class="hidden sm:inline">Al Carrito</span>
+              </button>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  }
+</main>

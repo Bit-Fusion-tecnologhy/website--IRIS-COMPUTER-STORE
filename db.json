@@ -1,0 +1,1080 @@
+{
+  "products": [
+    {
+      "id": "rtx-4090",
+      "name": "ASUS ROG Strix GeForce RTX 4090",
+      "category": "GPU",
+      "brand": "ASUS",
+      "subtitle": "NVIDIA / 24GB GDDR6X",
+      "price": 1999,
+      "originalPrice": 2199,
+      "description": "Potencia gráfica sin compromiso para la ejecución más exigente. Arquitectura Ada Lovelace con trazado de rayos de 3ª generación y DLSS 3.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDSm4Q19hWx7TiFHgmv5FxONEQyvj4Fc6RfY9BDHmBMd0euRUwlmvDHMb7Z3ai-IpWoQaoZO_78bsQzk-rNSGAXVJP0EjOlkEn50qBTuRiEYANf3_EuxBU7kFqvNMgzweMBPXmMrueHg7qKY3GsgjJm7MeDReW3lGcMlEeD9Gp3jmFu1LqM53VAHj2WA89jgq3RGx7QQQV9wXu9gCjB9LX59gqUPEXlj-15WJyRmr92j1S426btaZrw",
+      "images": [
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuDSm4Q19hWx7TiFHgmv5FxONEQyvj4Fc6RfY9BDHmBMd0euRUwlmvDHMb7Z3ai-IpWoQaoZO_78bsQzk-rNSGAXVJP0EjOlkEn50qBTuRiEYANf3_EuxBU7kFqvNMgzweMBPXmMrueHg7qKY3GsgjJm7MeDReW3lGcMlEeD9Gp3jmFu1LqM53VAHj2WA89jgq3RGx7QQQV9wXu9gCjB9LX59gqUPEXlj-15WJyRmr92j1S426btaZrw",
+        "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=80"
+      ],
+      "inStock": true,
+      "specs": [
+        "RTX 40 Series",
+        "16GB+ VRAM",
+        "PCIe 5.0"
+      ],
+      "badge": "Oferta",
+      "isFeatured": true,
+      "averageRating": 4.9,
+      "reviewCount": 34,
+      "isNew": false
+    },
+    {
+      "id": "ryzen-9",
+      "name": "AMD Ryzen 9 7950X3D",
+      "category": "CPU",
+      "brand": "AMD",
+      "subtitle": "AMD / 16 NÚCLEOS",
+      "price": 999,
+      "originalPrice": 1099,
+      "description": "Procesamiento de alto rendimiento con tecnología 3D V-Cache, diseñado para cargas de trabajo intensivas y gaming competitivo.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuD4VoYJMT_orhtdYnWjW2qdopzPgE1Qtr4E7AmGgWpcynbTQZ3PrRVVogi1v1IBDN1G51VlYvoovNyEIsQXZ8FDVn3Dz01QQ8PhfnfeVHzloqf5H3pedfDgyfYhlecEG4pgNKYowCHxLONbRclzxMI4JAN6j4bWZzVXHysN3ysLmbmyI-zNfR-HZa4SX5EzJpeVgKF-FhDaVNlqAtMB4EouaVPFsIW395OQ2OQIZcrF30Gw-OHE-U5_",
+      "images": [
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuD4VoYJMT_orhtdYnWjW2qdopzPgE1Qtr4E7AmGgWpcynbTQZ3PrRVVogi1v1IBDN1G51VlYvoovNyEIsQXZ8FDVn3Dz01QQ8PhfnfeVHzloqf5H3pedfDgyfYhlecEG4pgNKYowCHxLONbRclzxMI4JAN6j4bWZzVXHysN3ysLmbmyI-zNfR-HZa4SX5EzJpeVgKF-FhDaVNlqAtMB4EouaVPFsIW395OQ2OQIZcrF30Gw-OHE-U5_",
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=800&auto=format&fit=crop&q=80"
+      ],
+      "inStock": true,
+      "specs": [
+        "PCIe 5.0"
+      ],
+      "badge": "Nuevo",
+      "isFeatured": true,
+      "isNew": false
+    },
+    {
+      "id": "rtx-4080",
+      "name": "NVIDIA GeForce RTX 4080 Super",
+      "category": "GPU",
+      "brand": "NVIDIA",
+      "subtitle": "NVIDIA / 16GB GDDR6X",
+      "price": 799,
+      "originalPrice": 899,
+      "description": "Arquitectura avanzada, refrigeración precisa y rendimiento sostenido para creadores y gamers en resolución 4K.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDiHe9JlItZCLuZlfKibVXrQdzfbKMfEgtOn0_Sjsfb_b78bo_xzZ0PLvzLkBJp44DChsXATa9DmsRptAxjF1dSeCabk9GNouWBZQ3Ju05CC7azuFtJsk0je2OCez-b1Eif_V52BnwMigXHvqI3nGDT8tVATZFc3hWUpdxt8hP15eP3E4yp9Zmi15wPFTa-9M_kUmjpVKJv-gvQ5o-H0tbuwmEXjKR51HoCaDe2HGDtNh2gZO77UPJ2",
+      "images": [
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuDiHe9JlItZCLuZlfKibVXrQdzfbKMfEgtOn0_Sjsfb_b78bo_xzZ0PLvzLkBJp44DChsXATa9DmsRptAxjF1dSeCabk9GNouWBZQ3Ju05CC7azuFtJsk0je2OCez-b1Eif_V52BnwMigXHvqI3nGDT8tVATZFc3hWUpdxt8hP15eP3E4yp9Zmi15wPFTa-9M_kUmjpVKJv-gvQ5o-H0tbuwmEXjKR51HoCaDe2HGDtNh2gZO77UPJ2",
+        "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&auto=format&fit=crop&q=80"
+      ],
+      "inStock": true,
+      "specs": [
+        "RTX 40 Series",
+        "16GB+ VRAM",
+        "PCIe 5.0"
+      ],
+      "badge": "En Stock",
+      "isFeatured": true,
+      "averageRating": 4.8,
+      "reviewCount": 19,
+      "isNew": false
+    },
+    {
+      "id": "keychron-q1",
+      "name": "Keychron Q1 Pro Mechanical Keyboard",
+      "category": "PERIPHERAL",
+      "brand": "Keychron",
+      "subtitle": "INALÁMBRICO / ALUMINIO",
+      "price": 199,
+      "originalPrice": 220,
+      "description": "Teclado mecánico premium inalámbrico, chasis de aluminio mecanizado CNC y montura Gasket para una pulsación perfecta.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuD7jlwBKx_-IenNPHEgjQtyAMna_S_1dF-vifWl1M5jrpqaUS44gpPQBnRbja9Tyhhw8wUED9yNk1qqUke7xRDoy-fmat1RJ7QP4nL84u26-CeZ71wa6VsZPgjKQrbuW9AO5-Jh4aLJUJW1fFOfEQmBArl7V68GMUSNJqd8W09rtV2McgAgc5ABh39VUcfS6YqVHvcxIwTJ-w-449_WUlODRXSUk-ilyki3gjVOHcNhxydWLycpYs_9",
+      "images": [
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuD7jlwBKx_-IenNPHEgjQtyAMna_S_1dF-vifWl1M5jrpqaUS44gpPQBnRbja9Tyhhw8wUED9yNk1qqUke7xRDoy-fmat1RJ7QP4nL84u26-CeZ71wa6VsZPgjKQrbuW9AO5-Jh4aLJUJW1fFOfEQmBArl7V68GMUSNJqd8W09rtV2McgAgc5ABh39VUcfS6YqVHvcxIwTJ-w-449_WUlODRXSUk-ilyki3gjVOHcNhxydWLycpYs_9",
+        "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1595225476474-87563907a212?w=800&auto=format&fit=crop&q=80"
+      ],
+      "inStock": true,
+      "specs": [],
+      "badge": "En Stock",
+      "isFeatured": false,
+      "averageRating": 4.9,
+      "reviewCount": 21,
+      "isNew": false
+    },
+    {
+      "id": "apex-pro",
+      "name": "Apex Pro Precision Mouse",
+      "category": "PERIPHERAL",
+      "brand": "SteelSeries",
+      "subtitle": "PERIFÉRICO / 8000Hz",
+      "price": 149,
+      "originalPrice": 169,
+      "description": "Sensor óptico de máxima precisión y switches magnéticos regulables para respuesta inmediata.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAeVBOb-Wf71qv26rqrY3-ddUzVIISRxGbhkZuLEsaltxAvveVJaYKh0iZ-u10Zji7nVjkmL0pPf3pYdfLUakcE_lzIBsktnuFnslkxsJFFTXCZZt9Kzjnm-YhYjrhlR6hoTq7D0-UyMkI_fNEOocRJSkVioyVQcECCcs0wnh-_CNlOGxP4Sf5pRTkCmZObphadU6j-jxwddUshaMRHBHAHZ0tA_XI-nGyzx4JtctDa9pwzisWW2D7e",
+      "images": [
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuAeVBOb-Wf71qv26rqrY3-ddUzVIISRxGbhkZuLEsaltxAvveVJaYKh0iZ-u10Zji7nVjkmL0pPf3pYdfLUakcE_lzIBsktnuFnslkxsJFFTXCZZt9Kzjnm-YhYjrhlR6hoTq7D0-UyMkI_fNEOocRJSkVioyVQcECCcs0wnh-_CNlOGxP4Sf5pRTkCmZObphadU6j-jxwddUshaMRHBHAHZ0tA_XI-nGyzx4JtctDa9pwzisWW2D7e",
+        "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=800&auto=format&fit=crop&q=80"
+      ],
+      "inStock": true,
+      "specs": [],
+      "badge": "Nuevo",
+      "isFeatured": true,
+      "isNew": true
+    },
+    {
+      "id": "vengeance-ddr5",
+      "name": "Vengeance 64GB DDR5 Kit",
+      "category": "MEMORY",
+      "brand": "Corsair",
+      "subtitle": "MEMORIA / 6000MHz",
+      "price": 289,
+      "originalPrice": 329,
+      "description": "Kit de memoria RAM DDR5 de alta frecuencia y latencia optimizada para plataformas Intel y AMD de última generación.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAotpweC1opa1L5Q7luwz6fXmRAnWeGkQK4EApXLRQalT6fssgPcZHuH5vrT9_HN_o3dXdg3MLdMrxED22Dl7tZ9ZzbIExJPB0DTt6_edkNGO1nrOLnkC5ayaU2VQf7ByFMZ9tbPBOcjpgyo6j8_fiL6Cc1OP2LTPd3Vga4Q6ICe9LHRwt3CAia6SD9SojK6OZVIZD0PX9A6OldIMDzTnr_etbRIcIVv0dFO6nfBNhHEOgav13h3rE1",
+      "images": [
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuAotpweC1opa1L5Q7luwz6fXmRAnWeGkQK4EApXLRQalT6fssgPcZHuH5vrT9_HN_o3dXdg3MLdMrxED22Dl7tZ9ZzbIExJPB0DTt6_edkNGO1nrOLnkC5ayaU2VQf7ByFMZ9tbPBOcjpgyo6j8_fiL6Cc1OP2LTPd3Vga4Q6ICe9LHRwt3CAia6SD9SojK6OZVIZD0PX9A6OldIMDzTnr_etbRIcIVv0dFO6nfBNhHEOgav13h3rE1",
+        "https://images.unsplash.com/photo-1562976540-1502c2145186?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=800&auto=format&fit=crop&q=80"
+      ],
+      "inStock": true,
+      "specs": [
+        "16GB+ VRAM"
+      ],
+      "badge": "Popular",
+      "isFeatured": true,
+      "isNew": false
+    },
+    {
+      "id": "oled-34",
+      "name": "OLED 34 inch Ultrawide",
+      "category": "DISPLAYS",
+      "brand": "Alienware",
+      "subtitle": "PANTALLA / 240Hz",
+      "price": 1199,
+      "originalPrice": 1399,
+      "description": "Panel QD-OLED curvo de 34 pulgadas con negros puros, contraste infinito y tasa de refresco ultra rápida de 240Hz.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuB5gLl4BNp4P7jHYyWkuqtZ3XW7PcctA2Lf0rEmosNJo2GoKQg7pSZJz-kHOptT19qSL-q5zPFlhwAMH3pjaM837LcSFXAPx0Vui-U_UQQSVtRb3dkh7SmcArLxXVE46Uc-edZtDl5_T1gOfSp9XFOjsfHcmXYf2Ur0UoDYZzA_LifPbu82kTvgewsALHo6WGI12UU3_ITyf0XVFywCpAijmlSGqJXhU0UDc78xOU6YoFsszugh-dNn",
+      "images": [
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuB5gLl4BNp4P7jHYyWkuqtZ3XW7PcctA2Lf0rEmosNJo2GoKQg7pSZJz-kHOptT19qSL-q5zPFlhwAMH3pjaM837LcSFXAPx0Vui-U_UQQSVtRb3dkh7SmcArLxXVE46Uc-edZtDl5_T1gOfSp9XFOjsfHcmXYf2Ur0UoDYZzA_LifPbu82kTvgewsALHo6WGI12UU3_ITyf0XVFywCpAijmlSGqJXhU0UDc78xOU6YoFsszugh-dNn",
+        "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&auto=format&fit=crop&q=80"
+      ],
+      "inStock": true,
+      "specs": [],
+      "badge": "Destacado",
+      "isFeatured": true,
+      "isNew": false
+    },
+    {
+      "id": "iris-obsidian",
+      "name": "Iris Obsidian Build",
+      "category": "SYSTEMS",
+      "brand": "Iris",
+      "subtitle": "SISTEMA / REFRIGERACIÓN PERSONALIZADA",
+      "price": 3499,
+      "originalPrice": 3799,
+      "description": "Estación de trabajo y gaming de grado entusiasta, ensamblado a mano con refrigeración líquida personalizada y chasis acústico premium.",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCIPSllKh5P27UD4uP_Oid-0kbUr__LgPfw9NQnn19c8BMrKyfGz6Lh8Ceipk-XQ-mO-rvYQS0q8hymFxTmoT4OYGi8dm_G2LVGxxV51cVadOGtHeXqevIY8FBeXk85Ivuji8viwa09GaqXpKkeepwK76NtaI_Q1vPypbWWiZ6T1ShnTDwQICLQPxLbIOWQLzNMb3nZ_ebOG5v0K1ps5G1JbLxqgCrraTl2zBITFwyJNI8QIFUKERMv",
+      "images": [
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuCIPSllKh5P27UD4uP_Oid-0kbUr__LgPfw9NQnn19c8BMrKyfGz6Lh8Ceipk-XQ-mO-rvYQS0q8hymFxTmoT4OYGi8dm_G2LVGxxV51cVadOGtHeXqevIY8FBeXk85Ivuji8viwa09GaqXpKkeepwK76NtaI_Q1vPypbWWiZ6T1ShnTDwQICLQPxLbIOWQLzNMb3nZ_ebOG5v0K1ps5G1JbLxqgCrraTl2zBITFwyJNI8QIFUKERMv",
+        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800&auto=format&fit=crop&q=80"
+      ],
+      "inStock": true,
+      "specs": [
+        "RTX 40 Series",
+        "16GB+ VRAM",
+        "PCIe 5.0"
+      ],
+      "badge": "Exclusivo",
+      "isFeatured": true,
+      "averageRating": 5,
+      "reviewCount": 9,
+      "isNew": false
+    },
+    {
+      "id": "rx-7900-xtx",
+      "name": "AMD Radeon RX 7900 XTX 24GB",
+      "category": "GPU",
+      "brand": "AMD",
+      "subtitle": "AMD / 24GB GDDR6",
+      "price": 949,
+      "originalPrice": 1049,
+      "description": "Arquitectura RDNA 3 insignia con aceleradores de trazado de rayos y 24GB de VRAM para gaming en 4K extremo.",
+      "image": "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&auto=format&fit=crop&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=80"
+      ],
+      "inStock": true,
+      "specs": [
+        "RX 7000 Series",
+        "16GB+ VRAM",
+        "PCIe 5.0"
+      ],
+      "badge": "Destacado",
+      "isFeatured": true,
+      "isNew": false
+    },
+    {
+      "id": "rtx-4070-ti-super",
+      "name": "ASUS TUF Gaming GeForce RTX 4070 Ti SUPER",
+      "category": "GPU",
+      "brand": "ASUS",
+      "subtitle": "ASUS / 16GB GDDR6X",
+      "price": 799,
+      "originalPrice": 849,
+      "description": "Construcción militar TUF con triple ventilador Axial-tech y condensadores de grado militar para durabilidad extrema.",
+      "image": "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [
+        "RTX 40 Series",
+        "16GB+ VRAM",
+        "PCIe 5.0"
+      ],
+      "badge": "Nuevo",
+      "isFeatured": true,
+      "isNew": true
+    },
+    {
+      "id": "rx-7800-xt",
+      "name": "AMD Radeon RX 7800 XT OC 16GB",
+      "category": "GPU",
+      "brand": "AMD",
+      "subtitle": "AMD / 16GB GDDR6",
+      "price": 499,
+      "originalPrice": 549,
+      "description": "Rendimiento óptimo para resoluciones 1440p con trazado de rayos y compatibilidad total con AMD FSR 3.",
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [
+        "RX 7000 Series",
+        "16GB+ VRAM",
+        "PCIe 5.0"
+      ],
+      "badge": "Popular",
+      "isFeatured": false,
+      "isNew": false
+    },
+    {
+      "id": "rtx-4060-ti",
+      "name": "ASUS Dual GeForce RTX 4060 Ti 16GB",
+      "category": "GPU",
+      "brand": "ASUS",
+      "subtitle": "ASUS / 16GB GDDR6",
+      "price": 449,
+      "originalPrice": 499,
+      "description": "Eficiencia y tamaño compacto con 16GB de memoria de video para creadores de contenido y renders acelerados por IA.",
+      "image": "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [
+        "RTX 40 Series",
+        "16GB+ VRAM"
+      ],
+      "badge": "",
+      "isFeatured": false,
+      "isNew": false
+    },
+    {
+      "id": "i9-14900ks",
+      "name": "Intel Core i9-14900KS 6.2GHz 24-Core",
+      "category": "CPU",
+      "brand": "Intel",
+      "subtitle": "INTEL / 24 NÚCLEOS",
+      "price": 649,
+      "originalPrice": 729,
+      "description": "El procesador de escritorio insignia alcanzando hasta 6.2 GHz con tecnología Intel Thermal Velocity Boost.",
+      "image": "https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [
+        "PCIe 5.0"
+      ],
+      "badge": "Nuevo",
+      "isFeatured": true,
+      "isNew": true
+    },
+    {
+      "id": "ryzen-7-7800x3d",
+      "name": "AMD Ryzen 7 7800X3D Gaming Processor",
+      "category": "CPU",
+      "brand": "AMD",
+      "subtitle": "AMD / 8 NÚCLEOS 3D V-CACHE",
+      "price": 449,
+      "originalPrice": 489,
+      "description": "El procesador definitivo para gaming. 96MB de memoria caché L3 apilada verticalmente para tasas de cuadros sin caídas.",
+      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [
+        "PCIe 5.0"
+      ],
+      "badge": "Top Ventas",
+      "isFeatured": true,
+      "averageRating": 4.9,
+      "reviewCount": 28,
+      "isNew": false
+    },
+    {
+      "id": "i7-14700k",
+      "name": "Intel Core i7-14700K 20-Core",
+      "category": "CPU",
+      "brand": "Intel",
+      "subtitle": "INTEL / 20 NÚCLEOS",
+      "price": 399,
+      "originalPrice": 439,
+      "description": "Equilibrio supremo entre productividad multitarea y gaming de alta tasa de cuadros con arquitectura híbrida.",
+      "image": "https://images.unsplash.com/photo-1555680202-c86f0e12f086?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [
+        "PCIe 5.0"
+      ],
+      "badge": "En Stock",
+      "isFeatured": false,
+      "isNew": false
+    },
+    {
+      "id": "samsung-990-pro",
+      "name": "Samsung 990 PRO 4TB NVMe M.2 SSD",
+      "category": "MEMORY",
+      "brand": "Samsung",
+      "subtitle": "SAMSUNG / 4TB NVMe Gen4",
+      "price": 349,
+      "originalPrice": 389,
+      "description": "Velocidades secuenciales de lectura y escritura de hasta 7450/6900 MB/s para cargas instantáneas en workstations.",
+      "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [
+        "PCIe 5.0"
+      ],
+      "badge": "Pro",
+      "isFeatured": true,
+      "averageRating": 4.9,
+      "reviewCount": 42,
+      "isNew": false
+    },
+    {
+      "id": "dominator-titanium",
+      "name": "Corsair Dominator Titanium RGB 64GB DDR5",
+      "category": "MEMORY",
+      "brand": "Corsair",
+      "subtitle": "CORSAIR / 64GB DDR5 6600MHz",
+      "price": 319,
+      "originalPrice": 359,
+      "description": "Disipador de aluminio forjado de precisión con barras superiores intercambiables e iluminación RGB iCUE personalizable.",
+      "image": "https://images.unsplash.com/photo-1562976540-1502c2145186?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [
+        "16GB+ VRAM"
+      ],
+      "badge": "Nuevo",
+      "isFeatured": false,
+      "isNew": true
+    },
+    {
+      "id": "crucial-t700-gen5",
+      "name": "Crucial T700 2TB PCIe Gen5 NVMe M.2 SSD",
+      "category": "MEMORY",
+      "brand": "Corsair",
+      "subtitle": "CORSAIR / GEN 5 12,400 MB/s",
+      "price": 289,
+      "originalPrice": 329,
+      "description": "Rendimiento PCIe Gen5 extremo con hasta 12,400 MB/s de velocidad secuencial para transferencias de datos masivas.",
+      "image": "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [
+        "PCIe 5.0"
+      ],
+      "badge": "Nuevo",
+      "isFeatured": false,
+      "isNew": true
+    },
+    {
+      "id": "odyssey-neo-g9",
+      "name": "Samsung Odyssey Neo G9 49\" 240Hz Mini-LED",
+      "category": "DISPLAYS",
+      "brand": "Samsung",
+      "subtitle": "SAMSUNG / 49 DUAL QHD",
+      "price": 1499,
+      "originalPrice": 1799,
+      "description": "Inmersión total con curvatura 1000R, tecnología Quantum Matrix HDR 2000 y frecuencia de refresco de 240Hz.",
+      "image": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [],
+      "badge": "Oferta",
+      "isFeatured": true,
+      "isNew": false
+    },
+    {
+      "id": "rog-swift-oled",
+      "name": "ASUS ROG Swift OLED PG27AQDM 27\" 240Hz",
+      "category": "DISPLAYS",
+      "brand": "ASUS",
+      "subtitle": "ASUS / 27 OLED QHD",
+      "price": 849,
+      "originalPrice": 999,
+      "description": "Panel OLED de 27 pulgadas con tiempo de respuesta de 0.03 ms y disipador térmico personalizado inteligente.",
+      "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [],
+      "badge": "Nuevo",
+      "isFeatured": true,
+      "averageRating": 4.8,
+      "reviewCount": 22,
+      "isNew": true
+    },
+    {
+      "id": "arctis-nova-pro",
+      "name": "SteelSeries Arctis Nova Pro Wireless",
+      "category": "PERIPHERAL",
+      "brand": "SteelSeries",
+      "subtitle": "STEELSERIES / ANC HI-RES",
+      "price": 349,
+      "originalPrice": 379,
+      "description": "Cancelación activa de ruido híbrida de cuatro micrófonos, audio de alta resolución y sistema de batería dual intercambiable en caliente.",
+      "image": "https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [],
+      "badge": "Nuevo",
+      "isFeatured": false,
+      "averageRating": 4.7,
+      "reviewCount": 15,
+      "isNew": true
+    },
+    {
+      "id": "keychron-q3-max",
+      "name": "Keychron Q3 Max QMK Custom Mechanical Keyboard",
+      "category": "PERIPHERAL",
+      "brand": "Keychron",
+      "subtitle": "KEYCHRON / WIRELESS TKL",
+      "price": 219,
+      "originalPrice": 239,
+      "description": "Conectividad triple inalámbrica 2.4G/BT, cuerpo macizo de aluminio CNC, montaje en junta y acústica mejorada.",
+      "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [],
+      "badge": "Nuevo",
+      "isFeatured": false,
+      "averageRating": 4.9,
+      "reviewCount": 16,
+      "isNew": true
+    },
+    {
+      "id": "rog-harpe-ace",
+      "name": "ASUS ROG Harpe Ace Aim Lab Ultralight Mouse",
+      "category": "PERIPHERAL",
+      "brand": "ASUS",
+      "subtitle": "ASUS / 54G ULTRALIGERO",
+      "price": 129,
+      "originalPrice": 149,
+      "description": "Ratón inalámbrico para eSports ultraligero de 54 gramos, sensor óptico AimPoint de 36,000 DPI con switches ópticos ROG.",
+      "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [],
+      "badge": "",
+      "isFeatured": false,
+      "isNew": false
+    },
+    {
+      "id": "iris-nebula",
+      "name": "Iris Nebula Studio Edition Workstation",
+      "category": "SYSTEMS",
+      "brand": "Iris",
+      "subtitle": "IRIS / RTX 4080 / i9",
+      "price": 2899,
+      "originalPrice": 3199,
+      "description": "Configuración silenciosa optimizada para diseño 3D, animación y edición 8K en chasis acústico con iluminación ambiental sobria.",
+      "image": "https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [
+        "RTX 40 Series",
+        "16GB+ VRAM",
+        "PCIe 5.0"
+      ],
+      "badge": "Nuevo",
+      "isFeatured": true,
+      "isNew": true
+    },
+    {
+      "id": "iris-apex-ai",
+      "name": "Iris Apex AI Deep Learning Machine",
+      "category": "SYSTEMS",
+      "brand": "Iris",
+      "subtitle": "IRIS / RTX 4090 / 128GB RAM",
+      "price": 4999,
+      "originalPrice": 5499,
+      "description": "Potencia de cómputo masiva para entrenamiento de modelos locales de Inteligencia Artificial, LLMs y rendering profesional.",
+      "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=80",
+      "inStock": true,
+      "specs": [
+        "RTX 40 Series",
+        "16GB+ VRAM",
+        "PCIe 5.0"
+      ],
+      "badge": "Tope de Gama",
+      "isFeatured": true,
+      "isNew": false
+    }
+  ],
+  "categories": [
+    {
+      "id": "ALL",
+      "name": "Todo el Hardware",
+      "slug": "all"
+    },
+    {
+      "id": "GPU",
+      "name": "Tarjetas Gráficas",
+      "slug": "gpu"
+    },
+    {
+      "id": "CPU",
+      "name": "Procesadores",
+      "slug": "cpu"
+    },
+    {
+      "id": "PERIPHERAL",
+      "name": "Periféricos",
+      "slug": "peripheral"
+    },
+    {
+      "id": "MEMORY",
+      "name": "Memoria & Almacenamiento",
+      "slug": "memory"
+    },
+    {
+      "id": "DISPLAYS",
+      "name": "Monitores & Pantallas",
+      "slug": "displays"
+    },
+    {
+      "id": "SYSTEMS",
+      "name": "Workstations & Sistemas",
+      "slug": "systems"
+    }
+  ],
+  "homeCategories": [
+    {
+      "id": "furniture",
+      "name": "Mobiliario Ergonómico",
+      "tag": "Centros de Mando",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAdFDzQ185-DZXyCS8HR2kUUGt4dZ2Ec0lA80JJuM0swNIrBYhjY0fE0M0eXEPFGYhR_aCkcNVUHws4O5LvSoXUvSovs6qL_-Yl4p-LwQzHS0tH5cUoImz-CgQkuJacAExb-R_u3bhD6FPAttcwMHmn0_5SADmzZzPskPvhZjYkaxWpiekKP9G6vxQqF2oAC02Atcvsx7jHp2vaqTyX9klklw2QwRFZaRMZAbsVPLZEsNlcpCDgY8TS"
+    },
+    {
+      "id": "peripherals",
+      "name": "Periféricos de Precisión",
+      "tag": "Dispositivos de Entrada",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuCzEwC1CLF8Q2Ahepcis_PKKdt-Yc2d6eYR23-Yw435RcjeII5zcXgD728rknsp6krlPQzkYE_p-63IQp0DKZSs8DpgoC8OxwVcjEKHa7YNk4ANMSQTFLJVWeRsmDmA2drgRapQdp3k03pzrrYC0VoO8Y-wr7_R8dtmGcVYxl6dEd2sGDuNxrKOutYWt50C2uvHaTvjTt9kUVhHhAOq0mRjFDGbFR7j1It6zs5kqk0_DCFJTxnysTXS"
+    },
+    {
+      "id": "components",
+      "name": "Componentes de Procesamiento",
+      "tag": "Potencia Pura",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDAdGHqvAdlggWTQjVxqukR6wTP2MNNqKkDtY8u87J0Cr85Ev5BNoZI46f7tZdahA-feKFvjLopq8vDTTPs4O73UOWQ-YeP7PlQ-cCoqXuDQVL1c0wYnPUg7yAwPz2St3eqBwMnSwDCFsyP9ECN_BTzvG1YpIJvlJjpdymDN68CFEIoH8TLYElY4lPt5anHIhGPWR6SWw6V03WhysQLdcSNH2wHA1W1AXKUe0LMkV-33HKJ7Lk2-Kwl"
+    },
+    {
+      "id": "workstations",
+      "name": "Workstations Iris",
+      "tag": "Sistemas Preensamblados",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuAN15alktRgUIWoM6iCImM8WFIZ8cUMsiK5j-WeP3pnidZCQscegWy94HcS7BQY52zIIQgrwkg4GqgFSZucqe8Yl50rEpO6x7hAvVH4ucXRyVxIg8yCNRYm2iZPOmg9GHwXBzNSoC_ueIXGy_dnftrR0p-zrk9IlBMQER3UaTOtW2I0yTTjQdmjv8lLs4wCr7wgoGyjuAI95AuzUUoAeZV_os9p7MoSUZjBPYOdB7QHckB_JvtFgVIq)"
+    }
+  ],
+  "cart": [],
+  "orders": [
+    {
+      "id": "ord-1001",
+      "userId": "usr-iris-01",
+      "orderNumber": "ORD-892341",
+      "customer": {
+        "fullName": "Alex Vance",
+        "email": "alex.gamer@iris.com",
+        "phone": "+54 9 11 4567-8900",
+        "address": "Av. Libertador 4400, Piso 8",
+        "city": "Buenos Aires",
+        "zipCode": "C1425"
+      },
+      "items": [
+        {
+          "product": {
+            "id": "rtx-4090",
+            "name": "ASUS ROG Strix GeForce RTX 4090",
+            "category": "GPU",
+            "brand": "ASUS",
+            "subtitle": "NVIDIA / 24GB GDDR6X",
+            "price": 1999,
+            "originalPrice": 2199,
+            "description": "Potencia gráfica sin compromiso para la ejecución más exigente. Arquitectura Ada Lovelace con trazado de rayos de 3ª generación y DLSS 3.",
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuDSm4Q19hWx7TiFHgmv5FxONEQyvj4Fc6RfY9BDHmBMd0euRUwlmvDHMb7Z3ai-IpWoQaoZO_78bsQzk-rNSGAXVJP0EjOlkEn50qBTuRiEYANf3_EuxBU7kFqvNMgzweMBPXmMrueHg7qKY3GsgjJm7MeDReW3lGcMlEeD9Gp3jmFu1LqM53VAHj2WA89jgq3RGx7QQQV9wXu9gCjB9LX59gqUPEXlj-15WJyRmr92j1S426btaZrw",
+            "inStock": true,
+            "specs": [
+              "RTX 40 Series",
+              "16GB+ VRAM",
+              "PCIe 5.0"
+            ],
+            "badge": "Oferta",
+            "isFeatured": true
+          },
+          "quantity": 1
+        }
+      ],
+      "delivery": "express",
+      "modalidadEnvio": "Express 24 Horas",
+      "shippingMethod": "Express 24 Horas",
+      "subtotal": 1999,
+      "shipping": 120,
+      "tax": 169.91,
+      "total": 2288.91,
+      "status": "shipped",
+      "createdAt": "2026-03-01T14:30:00.000Z"
+    },
+    {
+      "id": "ord-1002",
+      "userId": "usr-iris-01",
+      "orderNumber": "ORD-541290",
+      "customer": {
+        "fullName": "Alex Vance",
+        "email": "alex.gamer@iris.com",
+        "phone": "+54 9 11 4567-8900",
+        "address": "Av. Libertador 4400, Piso 8",
+        "city": "Buenos Aires",
+        "zipCode": "C1425"
+      },
+      "items": [
+        {
+          "product": {
+            "id": "keychron-q1",
+            "name": "Keychron Q1 Pro Mechanical Keyboard",
+            "category": "PERIPHERAL",
+            "brand": "Keychron",
+            "subtitle": "INALÁMBRICO / ALUMINIO",
+            "price": 199,
+            "originalPrice": 220,
+            "description": "Teclado mecánico premium inalámbrico, chasis de aluminio mecanizado CNC y montura Gasket para una pulsación perfecta.",
+            "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuD7jlwBKx_-IenNPHEgjQtyAMna_S_1dF-vifWl1M5jrpqaUS44gpPQBnRbja9Tyhhw8wUED9yNk1qqUke7xRDoy-fmat1RJ7QP4nL84u26-CeZ71wa6VsZPgjKQrbuW9AO5-Jh4aLJUJW1fFOfEQmBArl7V68GMUSNJqd8W09rtV2McgAgc5ABh39VUcfS6YqVHvcxIwTJ-w-449_WUlODRXSUk-ilyki3gjVOHcNhxydWLycpYs_9",
+            "inStock": true,
+            "specs": [],
+            "badge": "En Stock",
+            "isFeatured": false
+          },
+          "quantity": 1
+        },
+        {
+          "product": {
+            "id": "apex-pro",
+            "name": "Apex Pro Precision Mouse",
+            "category": "PERIPHERAL",
+            "brand": "SteelSeries",
+            "subtitle": "PERIFÉRICO / 8000Hz",
+            "price": 149,
+            "originalPrice": 169,
+            "description": "Sensor óptico TrueMove de 20.000 CPI con interruptores mecánicos de respuesta ultrarrápida.",
+            "image": "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?w=800&auto=format&fit=crop&q=80",
+            "inStock": true,
+            "specs": [],
+            "badge": "En Stock",
+            "isFeatured": false
+          },
+          "quantity": 1
+        }
+      ],
+      "delivery": "priority",
+      "modalidadEnvio": "Courier Prioritario (2-3 Días Hábiles)",
+      "shippingMethod": "Courier Prioritario (2-3 Días Hábiles)",
+      "subtotal": 348,
+      "shipping": 45,
+      "tax": 29.58,
+      "total": 422.58,
+      "status": "confirmed",
+      "createdAt": "2026-03-10T18:15:00.000Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "usr-iris-01",
+      "fullName": "Alex Vance",
+      "email": "alex.gamer@iris.com",
+      "password": "iris2026",
+      "phone": "+54 9 11 4567-8900",
+      "address": "Av. Libertador 4400, Piso 8",
+      "city": "Buenos Aires",
+      "zipCode": "C1425",
+      "role": "customer",
+      "createdAt": "2026-01-15T12:00:00.000Z"
+    }
+  ],
+  "messages": [],
+  "entrepreneurs": [
+    {
+      "id": "valentina-rojas",
+      "name": "Valentina Rojas",
+      "role": "Diseñadora Gráfica",
+      "category": "Creador",
+      "tag": "Diseño • Branding • Ilustración",
+      "shortDescription": "Esta persona estaba construyendo su estudio de diseño desde cero. Necesitaba una máquina capaz de correr herramientas profesionales sin problemas, pero su presupuesto era limitado.",
+      "story": "Valentina lleva 6 años trabajando como freelance para agencias de publicidad y estudios de animación en Santa Cruz. Su portafolio incluye campañas para marcas nacionales e internacionales. En 2023, un proyecto de visualización arquitectónica para un desarrollo inmobiliario importante le exigía renderizar 40+ vistas en 4K con iluminación global, volumétricos y partículas — todo en menos de dos semanas.",
+      "need": "Su workstation anterior (Ryzen 7 5800X + RTX 3070) tardaba 6-8 horas por frame en escenas pesadas. Los plazos se volvían imposibles y la calidad debía reducirse para entregar a tiempo.",
+      "irisSupport": "Workstation Iris Pro: AMD Ryzen 9 7950X3D + ASUS ROG Strix RTX 4090 24GB + 128GB DDR5-5600 + 4TB NVMe Gen5. Ensamblaje con custom loop de refrigeración líquida para sostener cargas 24/7.",
+      "result": "Tiempos de render reducidos un 78% (de 6h a 1.3h por frame). Entregó el proyecto 3 días antes del deadline con calidad final full 8K. Hoy acepta proyectos de mayor escala y cobra un 40% más por render final.",
+      "image": "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=900&q=80",
+      "location": "Santa Cruz de la Sierra, Bolivia",
+      "year": 2024,
+      "featured": true,
+      "hasVideo": true,
+      "videoDuration": "8:24",
+      "quote": "IRIS no solo me vendió una computadora. Me escuchó, me entendió y me ayudó a empezar."
+    },
+    {
+      "id": "estudiante-ingenieria",
+      "name": "Carlos Méndez",
+      "role": "Estudiante de Ingeniería",
+      "category": "Estudiante",
+      "tag": "Programación • CAD • Simulación",
+      "shortDescription": "Esta persona necesitaba una laptop para sus clases de programación y proyectos de ingeniería. Con la tecnología adecuada, hoy está terminando su carrera y ya trabaja como desarrollador.",
+      "story": "Carlos cursa 5to año de Ingeniería de Sistemas en la UPSA. Sus proyectos finales requerían compilar código pesado, correr contenedores Docker y simulaciones que su laptop antigua no soportaba.",
+      "need": "Laptop de 8GB RAM con procesador de hace 5 años. Compilaciones de 15+ minutos, Docker no corría, thermal throttling constante.",
+      "irisSupport": "Laptop Iris Student Pro: Intel Core Ultra 7 + 32GB RAM + 1TB NVMe + RTX 4060. Configurada para desarrollo con WSL2 optimizado.",
+      "result": "Compilaciones de 15 min → 2 min. Docker y simulaciones corren fluido. Consiguió pasantía en empresa tecnológica local antes de graduarse.",
+      "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&q=80",
+      "location": "Santa Cruz de la Sierra, Bolivia",
+      "year": 2024,
+      "featured": false,
+      "hasVideo": true,
+      "videoDuration": "2:30"
+    },
+    {
+      "id": "emprendedor-local",
+      "name": "Andrea Gutiérrez",
+      "role": "Fundadora de Emprendimiento Local",
+      "category": "Emprendedor",
+      "tag": "E-commerce • Logística • Gestión",
+      "shortDescription": "Esta persona emprendió con una idea y poco equipo. IRIS le ayudó con la tecnología que necesitaba para organizar y hacer crecer su negocio.",
+      "story": "Andrea fundó su tienda online de productos artesanales en 2022. Empezó gestionando todo desde su celular. Cuando los pedidos crecieron, necesitó un sistema real.",
+      "need": "Gestión de inventario, pedidos y facturación en hojas de cálculo. Sin visibilidad de stock, errores frecuentes, tiempo perdido en tareas manuales.",
+      "irisSupport": "Workstation Iris SMB: Ryzen 7 7700X + 32GB DDR5 + 2TB NVMe + monitor 27\" 1440p. Software de gestión ERP preconfigurado.",
+      "result": "Procesamiento de pedidos 90% más rápido. Cero errores de stock. Escaló de 50 a 500 pedidos/mes en 6 meses.",
+      "image": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80",
+      "location": "Santa Cruz de la Sierra, Bolivia",
+      "year": 2024,
+      "featured": false,
+      "quote": "Empecé con una idea y poco equipo. IRIS me ayudó con la tecnología que necesitaba para organizar y hacer crecer mi negocio."
+    },
+    {
+      "id": "creadora-contenido",
+      "name": "Mariana López",
+      "role": "Creadora de Contenido",
+      "category": "Creador",
+      "tag": "Streaming • Video • Comunidad",
+      "shortDescription": "Esta persona hacía streaming con equipo limitado. Le armamos una estación de streaming con captura de video, audio profesional y doble monitor. Hoy tiene una comunidad creciendo.",
+      "story": "Mariana hace streaming de desarrollo de videojuegos y tutoriales de programación 3 veces por semana. Su setup anterior era una laptop con webcam integrada y micrófono barato.",
+      "need": "Calidad de video 720p, audio con ruido, sin captura de juego fluida, un solo monitor para leer chat y jugar.",
+      "irisSupport": "Estación Iris Creator: Ryzen 9 7900X + RTX 4080 Super + 64GB DDR5 + Elgato 4K60 Pro + Shure SM7B + dual monitor 27\" 1440p144Hz. Optimizada para NVENC AV1.",
+      "result": "Streaming 1440p120fps estable. Audio profesional. Comunidad creció 5x en 3 meses. Monetización activa.",
+      "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80",
+      "location": "Santa Cruz de la Sierra, Bolivia",
+      "year": 2024,
+      "featured": false,
+      "hasVideo": true,
+      "videoDuration": "5:12"
+    },
+    {
+      "id": "fotografo-profesional",
+      "name": "Roberto Vargas",
+      "role": "Fotógrafo Profesional",
+      "category": "Profesional",
+      "tag": "Fotografía • RAW • Video 4K",
+      "shortDescription": "Esta persona necesitaba un equipo capaz de procesar archivos RAW de alta resolución y editar video 4K. Le construimos una workstation que redujo su tiempo de edición significativamente.",
+      "story": "Roberto es fotógrafo de bodas y eventos corporativos con 10 años de experiencia. Su flujo de trabajo incluye miles de RAWs por evento y entrega de video 4K.",
+      "need": "Workstation de 4 años: exportación de RAWs 45 min/evento, render 4K 2+ horas, color grading con lag.",
+      "irisSupport": "Workstation Iris Pro Photo: Threadripper PRO 7965WX + 128GB DDR5 ECC + RTX 4090 24GB + 4TB NVMe Gen5 + monitor calibrado 4K 32\".",
+      "result": "Exportación RAWs 45 min → 6 min. Render 4K 2h → 18 min. Entrega a clientes en 24h (antes 1 semana).",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+      "location": "Santa Cruz de la Sierra, Bolivia",
+      "year": 2024,
+      "featured": false
+    },
+    {
+      "id": "programa-comunitario",
+      "name": "Programa Comunitario Tech",
+      "role": "Iniciativa Comunitaria",
+      "category": "Comunidad",
+      "tag": "Educación • Mentoría • Inclusión",
+      "shortDescription": "Un grupo de jóvenes que se reunía en un centro comunitario para aprender programación. No tenían equipos. IRIS pudo donar laptops y sesiones de mentoría técnica.",
+      "story": "En 2023, un centro comunitario en el Plan 3000 empezó un club de programación para jóvenes de 15-20 años. Se reunían 2 veces por semana pero solo tenían 3 laptops viejas compartidas entre 20+ estudiantes.",
+      "need": "Equipos insuficientes y obsoletos. Sin mentoría técnica. Jóvenes con talento pero sin acceso a tecnología.",
+      "irisSupport": "Donación de 15 laptops Iris Student + 12 meses mentoría quincenal con ingenieros IRIS + espacio de coworking mensual en oficinas IRIS.",
+      "result": "15 jóvenes completaron el programa. 8 consiguieron pasantías en empresas tech locales. 3 ya trabajan como desarrolladores junior.",
+      "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
+      "location": "Santa Cruz de la Sierra, Bolivia",
+      "year": 2024,
+      "featured": false
+    },
+    {
+      "id": "musico-producer",
+      "name": "Diego Torres",
+      "role": "Productor Musical",
+      "category": "Creador",
+      "tag": "Producción • Audio • Estudio",
+      "shortDescription": "Esta persona producía beats en una laptop vieja con latencia terrible. Hoy tiene un estudio home que suena profesional y produce para artistas locales.",
+      "story": "Diego lleva 4 años produciendo beats y mezclando para artistas independientes de Santa Cruz. Su setup era una laptop Dell vieja con 4GB de RAM que no podía correr más de 5 plugins simultáneos. La latencia era insoportable para grabar en tiempo real.",
+      "need": "Latencia de audio de 50ms, cracks al grabar, imposible usar VSTs pesados como Omnisphere o Kontakt. Sin interfaz de audio dedicada.",
+      "irisSupport": "Estación Iris Audio: Intel Core i7-13700K + 64GB DDR5 + 2TB NVMe + Focusrite Scarlett 4i4 + Auralec MF-02 monitores. Tratamiento acústico básico.",
+      "result": "Latencia de 50ms → 3ms. Produce 3 beats por día (antes 1 por semana). Tiene 2 artistas como clientes recurrentes y un estudio que suena real.",
+      "image": "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=600&q=80",
+      "location": "Santa Cruz de la Sierra, Bolivia",
+      "year": 2025,
+      "featured": false,
+      "quote": "Con la latencia que tenía, grabar era un suplicio. Ahora suena como un estudio profesional de verdad."
+    },
+    {
+      "id": "restaurantero",
+      "name": "Laura Mendoza",
+      "role": "Dueña de Restaurante",
+      "category": "Emprendedor",
+      "tag": "Gestión • POS • Delivery",
+      "shortDescription": "Esta persona manejaba su restaurante con cuadernos y calculadora. Ahora tiene sistema POS, control de inventario y presencia en apps de delivery.",
+      "story": "Laura tiene un restaurante de comida típica en el centro de Santa Cruz con 8 años de operación. Siempre fue todo manual: pedidos en papel, inventario en cuaderno, cierre de caja con calculadora. Cuando abrió un segundo local, el caos se duplicó.",
+      "need": "Sin sistema POS, sin control de stock, sin reportes de ventas. Horas perdidas cada semana en tareas manuales. Errores de caja frecuentes.",
+      "irisSupport": "Workstation Iris POS: Intel Core i5 + 16GB RAM + SSD 512GB + monitor touchscreen 15\" + impresora fiscal. Sistema POS táctil preconfigurado con inventario y reportes.",
+      "result": "Tiempo de corte de caja: 45 min → 5 min. Control de stock en tiempo real. Ahorra 12 horas/semana en tareas manuales. Ya planea el tercer local.",
+      "image": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=600&q=80",
+      "location": "Santa Cruz de la Sierra, Bolivia",
+      "year": 2025,
+      "featured": false,
+      "quote": "Antes perdía las cuentas entre cuadernos y calculadora. Ahora todo está en una pantalla."
+    },
+    {
+      "id": "cientifico-datos",
+      "name": "Miguel Ángel Vera",
+      "role": "Científico de Datos",
+      "category": "Profesional",
+      "tag": "Machine Learning • Python • Modelos",
+      "shortDescription": "Esta persona entrenaba modelos de ML en su laptop personal con tiempos de horas. Con una workstation dedicada, reduce experimentos de días a horas.",
+      "story": "Miguel trabaja como consultor de datos para empresas agroindustriales en Santa Cruz. Sus modelos predictivos de rendimiento de cultivos necesitaban procesar terabytes de datos satelitales y climáticos. Entrenar un modelo tomaba 8-12 horas en su laptop.",
+      "need": "Laptop con GPU integrada: entrenamiento de modelos ML极其慢. Sin GPU dedicada, experimentos limitados. Proyectos de semanas que podían ser días.",
+      "irisSupport": "Workstation Iris ML: AMD Ryzen 9 7950X + NVIDIA RTX 4090 24GB + 128GB DDR5 + 4TB NVMe + Ubuntu Linux. CUDA y cuDNN optimizados.",
+      "result": "Entrenamiento de modelo: 12h → 45min. Puede correr 10x más experimentos por semana. Ahora acepta proyectos de agroindustria que antes rechazaba por falta de potencia.",
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
+      "location": "Santa Cruz de la Sierra, Bolivia",
+      "year": 2025,
+      "featured": false
+    },
+    {
+      "id": "profesora-programacion",
+      "name": "Sofía Ríos",
+      "role": "Profesora de Programación",
+      "category": "Comunidad",
+      "tag": "Educación • Code Club • Formación",
+      "shortDescription": "Esta profesora organizaba clases de programación para jóvenes sin acceso a computadoras. IRIS le donó equipos y ella formó la primera generación de coders del barrio.",
+      "story": "Sofía es profesora de informática en una escuela pública del Plan 3000. Desde 2023 organiza un code club extraescolar donde enseña Python y desarrollo web a jóvenes de 14-18 años. El problema: la escuela solo tiene 5 computadoras viejas para 40+ estudiantes.",
+      "need": "Equipos insuficientes, sin internet estable, sin licencias de software. Los jóvenes aprenden teoría pero no pueden practicar lo suficiente.",
+      "irisSupport": "Donación de 20 laptops Iris Student + kit de routers WiFi + licencias educativas de herramientas de desarrollo. Soporte técnico por 12 meses.",
+      "result": "40 jóvenes ahora practican código en equipos reales. 12 proyectos presentados en feria de ciencias local. 5 jóvenes consiguieron becas de programación.",
+      "image": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
+      "location": "Santa Cruz de la Sierra, Bolivia",
+      "year": 2025,
+      "featured": false,
+      "quote": "El talento no tiene barrio. Pero las oportunidades sí. IRIS nos dio la oportunidad."
+    },
+    {
+      "id": "arquitecto-3d",
+      "name": "Fernando Castellanos",
+      "role": "Arquitecto 3D",
+      "category": "Creador",
+      "tag": "Render • Visualización • BIM",
+      "shortDescription": "Esta persona renderizaba proyectos arquitectónicos en una workstation de 8 años. Los renders tardaban noches enteras. Hoy entrega visualizaciones en horas.",
+      "story": "Fernando es socio de un estudio de arquitectura en Santa Cruz con 12 años de experiencia. Sus proyectos residenciales y comerciales requieren renders fotorrealistas, recorridos virtuales 360° y modelos BIM complejos. Su workstation anterior (i7-6700 + GTX 970) tardaba 12+ horas por render.",
+      "need": "Render 12+ horas, thermal throttling en sesiones largas, imposible correr recorridos virtuales en tiempo real, BIM que se congela con modelos grandes.",
+      "irisSupport": "Workstation Iris Arch: AMD Ryzen 9 7950X + RTX 4090 24GB + 128GB DDR5 + 4TB NVMe + monitor 4K 32\" calibrado. Ensamblaje silencioso con refrigeración líquida.",
+      "result": "Render 12h → 45min. Recorridos virtuales 360° en tiempo real. Ahora acepta proyectos de mayor escala y su estudio creció 60% en un año.",
+      "image": "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=80",
+      "location": "Santa Cruz de la Sierra, Bolivia",
+      "year": 2025,
+      "featured": false,
+      "hasVideo": true,
+      "videoDuration": "6:15"
+    },
+    {
+      "id": "veterinaria-gaming",
+      "name": "Camila Ortiz",
+      "role": "Veterinaria & Gamer",
+      "category": "Estudiante",
+      "tag": "Veterinaria • Gaming • Streaming",
+      "shortDescription": "Esta persona estudiaba veterinaria y hacía streaming de gaming por las noches. Necesitaba un equipo que sirva para ambas cosas. Hoy equilibra su carrera con su pasión.",
+      "story": "Camila cursa su último año de veterinaria en la UCB y por las noches streama partidas de competitivo con sus amigos. Su laptop no daba para ambas cosas: compilaciones de papers veterinarios + streaming estable eran imposibles juntos.",
+      "need": "Laptop que no puede ni compilar papers pesados ni hacer stream fluido. Sin GPU dedicada, el gaming era imposible en calidad aceptable.",
+      "irisSupport": "Laptop Iris Dual-Use: AMD Ryzen 7 7800H + RTX 4060 8GB + 32GB DDR5 + 1TB NVMe. Optimizada para productividad diurna y gaming/streaming nocturno.",
+      "result": "Compila papers en segundos. Streama a 1080p60 estable. Puedo equilibrar estudiar y disfrutar sin cambiar de equipo.",
+      "image": "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&q=80",
+      "location": "Santa Cruz de la Sierra, Bolivia",
+      "year": 2025,
+      "featured": false,
+      "quote": "No tuvíe que elegir entre mi carrera y mi pasión. Con el equipo correcto, puedo hacer las dos."
+    },
+    {
+      "id": "disenadora-ux",
+      "name": "Valeria Pinto",
+      "role": "Diseñadora UX/UI",
+      "category": "Profesional",
+      "tag": "UX • Figma • Prototipos",
+      "shortDescription": "Esta persona diseñaba interfaces en una pantalla chica y una laptop lenta. Ahora tiene doble monitor 4K y una máquina que corre Figma, After Effects y prototipos sin problemas.",
+      "story": "Valeria trabaja como UX Designer freelance para startups de LATAM. Su flujo incluye Figma con archivos pesados de 200+ frames, After Effects para micro-interacciones y prototipos interactivos. Su laptop de 4 años no daba para todo eso simultáneamente.",
+      "need": "Figma se congela con archivos grandes, After Effects tarda minutos en previsualizar, sin espacio para doble monitor. Tiempo perdido en renders de prototipos.",
+      "irisSupport": "Workstation Iris Design: Intel Core i7-13700K + RTX 4070 Ti + 64GB DDR5 + 2TB NVMe + doble monitor 27\" 4K. Figma, AE y prototyping optimizados.",
+      "result": "Figma sin lag con archivos de 200+ frames. After Effects previsualiza en tiempo real. Ahora entrega 3 proyectos simultáneos (antes 1 a la vez).",
+      "image": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80",
+      "location": "Santa Cruz de la Sierra, Bolivia",
+      "year": 2025,
+      "featured": false
+    }
+  ],
+  "videos": [
+    {
+      "id": "testimonio-valentina",
+      "title": "Valentina Rojas: De cero a estudio propio",
+      "description": "Cómo una diseñadora gráfica construyó su negocio con la tecnología adecuada. (Video de ejemplo)",
+      "thumbnail": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+      "duration": "8:24",
+      "type": "Testimonio"
+    },
+    {
+      "id": "detras-escena-comunitario",
+      "title": "Programa Comunitario: Detrás de escena",
+      "description": "El proceso de equipar y acompañar a jóvenes que hoy trabajan en tecnología. (Video de ejemplo)",
+      "thumbnail": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+      "duration": "12:07",
+      "type": "Detrás de escena"
+    }
+  ],
+  "principles": [
+    {
+      "number": "01",
+      "title": "Equipar",
+      "icon": "laptop_mac",
+      "description": "Proporcionar la tecnología que permite estudiar, trabajar, crear o emprender. Una laptop para el que está estudiando. Un equipo de renderizado para la diseñadora. Las herramientas correctas para cada etapa.",
+      "id": "snINpyvCFiA"
+    },
+    {
+      "number": "02",
+      "title": "Impulsar",
+      "icon": "trending_up",
+      "description": "Ayudar a que una persona pueda dar el siguiente paso con su proyecto. Desde asesoría técnica hasta facilidades de pago que hagan posible lo que parecía lejano.",
+      "id": "bYJ7cMrBJNA"
+    },
+    {
+      "number": "03",
+      "title": "Colaborar",
+      "icon": "handshake",
+      "description": "Participar directamente en proyectos e iniciativas de personas de la comunidad. No solo vender hardware: ser parte del proceso, entender la necesidad y aportar lo que sabemos hacer.",
+      "id": "d1nN9lGQxuo"
+    },
+    {
+      "number": "04",
+      "title": "Visibilizar",
+      "icon": "visibility",
+      "description": "Dar espacio y difusión a proyectos y personas locales. Porque a veces lo que falta no es talento ni esfuerzo, sino que alguien te escuche y te presente donde no llegas solo.",
+      "id": "UQbMewY_5ao"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "rev-001",
+      "productId": "rtx-4090",
+      "authorId": "usr-iris-01",
+      "authorName": "Alex Vance",
+      "rating": 5,
+      "title": "Potencia impresionante",
+      "comment": "La RTX 4090 supera todas mis expectativas. Los juegos en 4K con ray tracing son increíbles. La refrigeración funciona perfecto y el rendimiento es exactamente lo prometido.",
+      "createdAt": "2026-03-15T10:30:00.000Z"
+    },
+    {
+      "id": "rev-002",
+      "productId": "rtx-4090",
+      "authorId": "usr-demo-02",
+      "authorName": "María García",
+      "rating": 4,
+      "title": "Excelente pero cara",
+      "comment": "El rendimiento es brutal, pero el precio es bastante alto. Para quien necesita potencia extrema vale la pena, pero hay opciones más经济icas para gaming normal.",
+      "createdAt": "2026-03-20T14:15:00.000Z"
+    },
+    {
+      "id": "rev-003",
+      "productId": "rtx-4090",
+      "authorId": "usr-demo-03",
+      "authorName": "Carlos López",
+      "rating": 5,
+      "title": "Perfecta para trabajo profesional",
+      "comment": "La uso para rendering 3D y edición de video. La diferencia con mi tarjeta anterior es abismal. El trazado de rayos en tiempo real es un cambio total para mi flujo de trabajo.",
+      "createdAt": "2026-04-01T09:00:00.000Z"
+    },
+    {
+      "id": "rev-004",
+      "productId": "keychron-q1",
+      "authorId": "usr-iris-01",
+      "authorName": "Alex Vance",
+      "rating": 5,
+      "title": "El mejor teclado que he tenido",
+      "comment": "La calidad de construcción es excepcional. El sonido de las teclas es satisfactorio y la conectividad inalámbrica funciona perfecto. El chasis de aluminio se siente premium.",
+      "createdAt": "2026-03-25T16:45:00.000Z"
+    },
+    {
+      "id": "rev-005",
+      "productId": "rtx-4090",
+      "authorId": "usr-demo-04",
+      "authorName": "Demo User",
+      "rating": 4,
+      "title": "Muy buena GPU",
+      "comment": "La RTX 4090 funciona perfecto para gaming en 4K. El rendimiento es impresionante.",
+      "createdAt": "2026-09-16T22:00:00.000Z"
+    },
+    {
+      "id": "rev-006",
+      "productId": "ryzen-7-7800x3d",
+      "authorId": "usr-demo-05",
+      "authorName": "Rodrigo M.",
+      "rating": 5,
+      "title": "El rey indiscutible para gaming",
+      "comment": "Temperaturas estables y tasas de frames altísimas en 1440p y 4K. La mejor compra para actualizar mi plataforma AM5.",
+      "createdAt": "2026-04-05T11:20:00.000Z"
+    },
+    {
+      "id": "rev-007",
+      "productId": "rtx-4080",
+      "authorId": "usr-demo-06",
+      "authorName": "Sebastian V.",
+      "rating": 5,
+      "title": "Silenciosa y extremadamente rápida",
+      "comment": "DLSS 3.5 con frame generation es magia pura. Rendimiento de sobra en Cyberpunk y Flight Simulator sin pasar los 62 grados.",
+      "createdAt": "2026-04-08T15:10:00.000Z"
+    },
+    {
+      "id": "rev-008",
+      "productId": "samsung-990-pro",
+      "authorId": "usr-demo-07",
+      "authorName": "Daniela R.",
+      "rating": 5,
+      "title": "Velocidad de lectura descomunal",
+      "comment": "Carga proyectos pesados de Premiere y Unreal Engine al instante. La mejor unidad NVMe Gen4 del mercado sin duda.",
+      "createdAt": "2026-04-10T18:40:00.000Z"
+    },
+    {
+      "id": "rev-009",
+      "productId": "rog-swift-oled",
+      "authorId": "usr-demo-08",
+      "authorName": "Mauricio P.",
+      "rating": 5,
+      "title": "Negros perfectos y respuesta de 0.03ms",
+      "comment": "El salto de IPS a OLED a 240Hz es indescriptible. Los colores y la claridad en movimiento no tienen comparación.",
+      "createdAt": "2026-04-12T09:15:00.000Z"
+    }
+  ],
+  "sellerReplies": [
+    {
+      "id": "reply-001",
+      "reviewId": "rev-002",
+      "sellerId": "usr-iris-01",
+      "sellerName": "Iris Computer",
+      "comment": "¡Gracias por tu reseña, María! Entendemos tu punto sobre el precio. La RTX 4090 está orientada a entusiastas y profesionales que necesitan máximo rendimiento. Para gaming en 1440p, la RTX 4070 Ti Super puede ser una excelente alternativa más accesible.",
+      "createdAt": "2026-03-21T11:00:00.000Z"
+    }
+  ]
+}

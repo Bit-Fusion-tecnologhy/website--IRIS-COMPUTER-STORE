@@ -1,0 +1,93 @@
+<section
+  class="hero-carousel relative overflow-hidden rounded-xl border border-white/10 bg-surface mx-4 md:mx-6 lg:mx-auto lg:max-w-container-max"
+  (mouseenter)="onMouseEnter()"
+  (mouseleave)="onMouseLeave()"
+  role="region"
+  aria-label="Productos destacados"
+  aria-roledescription="carrusel">
+
+  <!-- Slides container -->
+  <div #slidesContainer class="hero-slides flex transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+    @for (product of products(); track product.id; let i = $index) {
+      <div
+        class="hero-slide min-w-full flex items-center p-6 md:p-10 lg:p-12 gap-6 lg:gap-10 relative min-h-[320px] md:min-h-[380px]"
+        role="group"
+        [attr.aria-roledescription]="'Diapositiva ' + (i + 1) + ' de ' + totalSlides()"
+        [attr.aria-label]="product.name">
+
+        <!-- Content -->
+        <div class="hero-slide-content flex-1 lg:flex-[0_0_38%] z-10 text-center lg:text-left">
+          <span class="hero-slide-badge inline-block px-3 py-1 rounded text-[11px] font-label-tech uppercase tracking-widest font-semibold mb-3"
+                [class]="getBadgeClass(product)">
+            {{ getBadgeText(product) }}
+          </span>
+          <h2 class="hero-slide-title font-headline-lg lg:text-[32px] lg:leading-[1.15] font-bold text-on-surface mb-2 lg:mb-3">
+            {{ product.name }}
+          </h2>
+          <p class="hero-slide-desc text-sm lg:text-[14px] text-on-surface-variant mb-4 lg:mb-5 leading-relaxed">
+            {{ product.description }}
+          </p>
+          <div class="hero-slide-prices flex items-baseline gap-3 mb-5 justify-center lg:justify-start">
+            @if (product.originalPrice && product.originalPrice > product.price) {
+              <span class="hero-slide-price-old font-headline-md text-lg font-normal text-on-surface-variant line-through opacity-60">
+                {{ product.originalPrice | currency:'USD':'symbol':'1.0-0' }}
+              </span>
+            }
+            <span class="hero-slide-price-new font-headline-xl lg:text-[36px] font-bold text-on-surface">
+              {{ product.price | currency:'USD':'symbol':'1.0-0' }}
+            </span>
+          </div>
+          <a [routerLink]="['/product', product.id]"
+             class="hero-slide-cta inline-flex items-center gap-2 px-7 py-3.5 rounded-lg iris-gradient-bg text-white font-label-tech text-xs font-semibold uppercase tracking-wider transition-all hover:brightness-110 hover:-translate-y-px">
+            Comprar ahora
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </div>
+
+        <!-- Image -->
+        <div class="hero-slide-image flex-1 flex items-center justify-center relative h-full hidden md:flex">
+          <img [src]="product.image"
+               [alt]="product.name"
+               loading="eager"
+               decoding="async" />
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Navigation arrows -->
+  <button
+    type="button"
+    (click)="prev(); $event.stopPropagation()"
+    class="hero-nav absolute top-1/2 -translate-y-1/2 w-10 h-10 md:w-10 md:h-10 rounded-full bg-surface border border-white/10 text-on-surface flex items-center justify-center cursor-pointer transition-all hover:border-primary hover:text-primary z-10 left-3 md:left-3"
+    aria-label="Diapositiva anterior">
+    <span class="material-symbols-outlined">chevron_left</span>
+  </button>
+  <button
+    type="button"
+    (click)="next(); $event.stopPropagation()"
+    class="hero-nav absolute top-1/2 -translate-y-1/2 w-10 h-10 md:w-10 md:h-10 rounded-full bg-surface border border-white/10 text-on-surface flex items-center justify-center cursor-pointer transition-all hover:border-primary hover:text-primary z-10 right-3 md:right-3"
+    aria-label="Siguiente diapositiva">
+    <span class="material-symbols-outlined">chevron_right</span>
+  </button>
+
+  <!-- Dots -->
+  <div class="hero-dots absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10" role="tablist" aria-label="Seleccionar diapositiva">
+    @for (product of products(); track product.id; let i = $index) {
+      <button
+        type="button"
+        (click)="goTo(i); $event.stopPropagation()"
+        role="tab"
+        [attr.aria-selected]="i === currentSlide()"
+        [attr.aria-label]="'Diapositiva ' + (i + 1) + ': ' + product.name"
+        class="hero-dot border-none cursor-pointer transition-all duration-300"
+        [class]="i === currentSlide() ? 'w-6 h-2 rounded bg-primary-container' : 'w-2 h-2 rounded-full bg-white/20'">
+      </button>
+    }
+  </div>
+
+  <!-- Pause indicator (screen reader only) -->
+  @if (isPaused()) {
+    <span class="sr-only" aria-live="polite">Carrusel en pausa</span>
+  }
+</section>

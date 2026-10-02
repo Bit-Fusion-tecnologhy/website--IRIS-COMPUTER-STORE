@@ -1,0 +1,383 @@
+<main class="min-h-screen pt-28 pb-20 px-gutter max-w-5xl mx-auto bg-background animate-fade-in-up">
+  @if (user(); as currentUser) {
+    <!-- Header del Perfil de Usuario Gamer -->
+    <div class="rounded-lg border border-white/10 bg-surface-card p-6 sm:p-8 mb-8 shadow-xl relative overflow-hidden">
+      <div class="absolute top-0 left-0 right-0 h-1 bg-iris-gradient"></div>
+
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div class="flex items-center gap-4 sm:gap-5">
+          <!-- Avatar Gamer -->
+          <div class="relative">
+            <div class="flex h-16 w-16 sm:h-20 sm:w-20 items-center justify-center rounded-lg bg-surface border border-primary/40 shadow-inner">
+              @if (currentUser.avatar) {
+                <img [src]="currentUser.avatar" [alt]="currentUser.fullName" class="h-full w-full rounded-lg object-cover" />
+              } @else {
+                <span class="font-headline-xl text-2xl sm:text-3xl font-bold bg-iris-gradient bg-clip-text text-transparent">
+                  {{ currentUser.fullName.charAt(0).toUpperCase() }}
+                </span>
+              }
+            </div>
+            <span class="absolute -bottom-1 -right-1 flex h-4 w-4">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-surface-card"></span>
+            </span>
+          </div>
+
+          <!-- Info de Cuenta -->
+          <div>
+            <div class="flex items-center gap-2 mb-1 flex-wrap">
+              <h1 class="font-headline-md text-xl sm:text-2xl font-bold text-on-surface">
+                {{ currentUser.fullName }}
+              </h1>
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-label-tech uppercase tracking-wider bg-primary/10 text-primary border border-primary/20">
+                <span class="stock-dot"></span> Miembro Iris
+              </span>
+            </div>
+            <p class="text-xs text-on-surface-variant font-mono">{{ currentUser.email }}</p>
+            <p class="text-[11px] text-on-surface-variant mt-1">
+              Usuario registrado desde {{ currentUser.createdAt | date:'MMM yyyy' }}
+            </p>
+          </div>
+        </div>
+
+        <!-- Botón Salir -->
+        <button
+          type="button"
+          (click)="logout()"
+          class="flex items-center gap-2 px-4 py-2 rounded border border-white/10 hover:border-error/40 bg-surface hover:bg-error/10 text-xs font-label-tech uppercase tracking-wider text-on-surface hover:text-error transition-all cursor-pointer">
+          <span class="material-symbols-outlined text-base">logout</span>
+          <span>Cerrar Sesión</span>
+        </button>
+      </div>
+
+      <!-- Selector de Pestañas del Panel -->
+      <div class="flex items-center gap-3 mt-8 border-t border-white/10 pt-6">
+        <button
+          type="button"
+          (click)="selectedTab.set('orders')"
+          [class.border-primary]="selectedTab() === 'orders'"
+          [class.text-primary]="selectedTab() === 'orders'"
+          [class.bg-primary/10]="selectedTab() === 'orders'"
+          [class.border-transparent]="selectedTab() !== 'orders'"
+          [class.text-on-surface-variant]="selectedTab() !== 'orders'"
+          class="flex items-center gap-2 px-4 py-2 rounded border text-xs font-label-tech uppercase tracking-wider font-semibold transition-all cursor-pointer">
+          <span class="material-symbols-outlined text-base">receipt_long</span>
+          <span>Mis Compras</span>
+          <span class="ml-1 rounded-full bg-surface px-2 py-0.5 text-[10px] text-on-surface border border-white/10">
+            {{ orders().length }}
+          </span>
+        </button>
+
+        <button
+          type="button"
+          (click)="selectedTab.set('profile')"
+          [class.border-primary]="selectedTab() === 'profile'"
+          [class.text-primary]="selectedTab() === 'profile'"
+          [class.bg-primary/10]="selectedTab() === 'profile'"
+          [class.border-transparent]="selectedTab() !== 'profile'"
+          [class.text-on-surface-variant]="selectedTab() !== 'profile'"
+          class="flex items-center gap-2 px-4 py-2 rounded border text-xs font-label-tech uppercase tracking-wider font-semibold transition-all cursor-pointer">
+          <span class="material-symbols-outlined text-base">manage_accounts</span>
+          <span>Datos de Envío</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- TAB 1: MIS COMPRAS                         -->
+    <!-- ========================================== -->
+    @if (selectedTab() === 'orders') {
+      <section>
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="font-headline-md text-lg text-on-surface flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">local_mall</span>
+            Historial de Compras de Hardware
+          </h2>
+          <span class="text-xs text-on-surface-variant font-label-tech">
+            {{ orders().length }} {{ orders().length === 1 ? 'pedido registrado' : 'pedidos registrados' }}
+          </span>
+        </div>
+
+        <!-- Estado de Carga -->
+        @if (isLoadingOrders()) {
+          <div class="space-y-4">
+            <div class="h-28 rounded-lg skeleton"></div>
+            <div class="h-28 rounded-lg skeleton"></div>
+          </div>
+        } @else if (orders().length === 0) {
+          <!-- Estado Vacío -->
+          <div class="rounded-lg border border-white/10 bg-surface-card p-12 text-center shadow-lg">
+            <div class="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/5 text-on-surface-variant">
+              <span class="material-symbols-outlined text-4xl">inventory_2</span>
+            </div>
+            <h3 class="font-headline-md text-xl font-bold text-on-surface mb-2">No tienes compras registradas</h3>
+            <p class="text-sm text-on-surface-variant max-w-md mx-auto mb-6">
+              Aún no has realizado pedidos en Iris Computer. Descubre nuestro catálogo con los últimos procesadores, gráficas y periféricos.
+            </p>
+            <a
+              routerLink="/catalog"
+              class="iris-gradient-btn inline-flex items-center gap-2 px-6 py-3 rounded text-xs font-bold text-white uppercase tracking-wider hover:opacity-90 transition-all">
+              <span class="material-symbols-outlined text-base">grid_view</span>
+              Explorar Catálogo Iris
+            </a>
+          </div>
+        } @else {
+          <!-- Listado de Órdenes -->
+          <div class="space-y-4">
+            @for (order of orders(); track order.id || order.orderNumber) {
+              <div class="rounded-lg border border-white/10 bg-surface-card overflow-hidden shadow-lg transition-all hover:border-white/20">
+                <!-- Cabecera de la Orden (Siempre Visible) -->
+                <div
+                  (click)="toggleOrderExpand(order.id)"
+                  class="p-5 sm:p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 cursor-pointer hover:bg-white/[0.02] transition-colors">
+                  <div class="flex items-start sm:items-center gap-4">
+                    <div class="flex h-12 w-12 items-center justify-center rounded bg-surface border border-white/10 text-primary shrink-0">
+                      <span class="material-symbols-outlined text-2xl">package_2</span>
+                    </div>
+
+                    <div>
+                      <div class="flex items-center gap-2 flex-wrap">
+                        <span class="font-label-tech text-sm font-bold text-primary">
+                          #{{ order.orderNumber }}
+                        </span>
+                        <span
+                          [class]="getStatusBadgeClass(order.status)"
+                          class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-label-tech uppercase tracking-wider border">
+                          <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+                          {{ getStatusLabel(order.status) }}
+                        </span>
+                        <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-label-tech uppercase tracking-wider bg-white/5 border border-white/10 text-on-surface-variant">
+                          <span class="material-symbols-outlined text-[13px] text-primary">{{ getDeliveryIcon(order) }}</span>
+                          <span>{{ getDeliveryLabel(order) }}</span>
+                        </span>
+                      </div>
+                      <p class="text-xs text-on-surface-variant mt-1">
+                        Comprado el {{ order.createdAt | date:'d/MM/yyyy, h:mm a' }} • {{ order.items.length }} {{ order.items.length === 1 ? 'producto' : 'productos' }}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between sm:justify-end gap-6 sm:gap-8 pt-3 sm:pt-0 border-t sm:border-t-0 border-white/5">
+                    <div class="text-right">
+                      <span class="font-label-tech text-[10px] uppercase text-on-surface-variant block">Total Orden</span>
+                      <span class="font-price-display text-lg font-bold text-on-surface">
+                        {{ order.total | currency:'USD':'symbol':'1.2-2' }}
+                      </span>
+                    </div>
+
+                    <button
+                      type="button"
+                      [title]="isOrderExpanded(order.id) ? 'Colapsar detalles' : 'Ver detalles'"
+                      class="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 text-on-surface-variant hover:text-primary transition-all">
+                      <span
+                        class="material-symbols-outlined text-lg transition-transform duration-200"
+                        [class.rotate-180]="isOrderExpanded(order.id)">
+                        expand_more
+                      </span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Detalle Expandible de la Orden -->
+                @if (isOrderExpanded(order.id)) {
+                  <div class="border-t border-white/10 bg-surface/50 p-5 sm:p-6 space-y-6 animate-fade-in-up">
+                    <!-- Artículos de la Orden -->
+                    <div>
+                      <h4 class="font-label-tech text-[11px] uppercase tracking-wider text-on-surface-variant mb-3 flex items-center gap-2">
+                        <span class="material-symbols-outlined text-sm text-primary">devices</span>
+                        Productos en este pedido
+                      </h4>
+
+                      <div class="divide-y divide-white/5 rounded border border-white/5 bg-surface-card">
+                        @for (item of order.items; track item.product.id) {
+                          <div class="p-3 sm:p-4 flex items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                              <img
+                                [src]="item.product.image"
+                                [alt]="item.product.name"
+                                class="h-12 w-12 rounded object-contain bg-surface p-1 border border-white/10 shrink-0"
+                              />
+                              <div>
+                                <a [routerLink]="['/product', item.product.id]" class="text-xs sm:text-sm font-bold text-on-surface hover:text-primary transition-colors">
+                                  {{ item.product.name }}
+                                </a>
+                                <p class="text-[11px] text-on-surface-variant">
+                                  {{ item.quantity }} × {{ item.product.price | currency:'USD':'symbol':'1.2-2' }}
+                                </p>
+                              </div>
+                            </div>
+
+                            <span class="font-price-display text-xs sm:text-sm font-bold text-on-surface shrink-0">
+                              {{ (item.product.price * item.quantity) | currency:'USD':'symbol':'1.2-2' }}
+                            </span>
+                          </div>
+                        }
+                      </div>
+                    </div>
+
+                    <!-- Cuadrícula: Envío y Desglose Financiero -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <!-- Datos de Envío -->
+                      <div class="rounded border border-white/5 bg-surface-card p-4 text-xs">
+                        <h5 class="font-label-tech text-[10px] uppercase text-primary font-bold mb-2 flex items-center gap-1.5">
+                          <span class="material-symbols-outlined text-sm">local_shipping</span>
+                          Destino de Entrega
+                        </h5>
+                        <p class="font-bold text-on-surface">{{ order.customer.fullName }}</p>
+                        <p class="text-on-surface-variant">{{ order.customer.address }}</p>
+                        <p class="text-on-surface-variant">{{ order.customer.city }} {{ order.customer.zipCode }}</p>
+                        <p class="text-on-surface-variant">{{ order.customer.phone }}</p>
+                        <div class="mt-2 pt-2 border-t border-white/5 flex items-center justify-between text-[11px]">
+                          <span class="text-on-surface-variant">Modalidad de Envío:</span>
+                          <span class="font-label-tech uppercase text-primary font-bold flex items-center gap-1">
+                            <span class="material-symbols-outlined text-[13px]">{{ getDeliveryIcon(order) }}</span>
+                            {{ getDeliveryLabel(order) }}
+                          </span>
+                        </div>
+                      </div>
+
+                      <!-- Desglose de Pago -->
+                      <div class="rounded border border-white/5 bg-surface-card p-4 text-xs space-y-1.5">
+                        <h5 class="font-label-tech text-[10px] uppercase text-primary font-bold mb-2 flex items-center gap-1.5">
+                          <span class="material-symbols-outlined text-sm">receipt</span>
+                          Resumen de Pago
+                        </h5>
+                        <div class="flex justify-between text-on-surface-variant">
+                          <span>Subtotal:</span>
+                          <span>{{ order.subtotal | currency:'USD':'symbol':'1.2-2' }}</span>
+                        </div>
+                        <div class="flex justify-between text-on-surface-variant">
+                          <span>Costo de Envío:</span>
+                          <span>{{ order.shipping | currency:'USD':'symbol':'1.2-2' }}</span>
+                        </div>
+                        <div class="flex justify-between text-on-surface-variant">
+                          <span>Impuestos (8.5%):</span>
+                          <span>{{ order.tax | currency:'USD':'symbol':'1.2-2' }}</span>
+                        </div>
+                        <div class="flex justify-between border-t border-white/10 pt-2 font-bold text-sm text-on-surface">
+                          <span>Total Cancelado:</span>
+                          <span class="text-primary font-price-display">{{ order.total | currency:'USD':'symbol':'1.2-2' }}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                }
+              </div>
+            }
+          </div>
+        }
+      </section>
+    }
+
+    <!-- ========================================== -->
+    <!-- TAB 2: DATOS DE ENVÍO / PERFIL             -->
+    <!-- ========================================== -->
+    @if (selectedTab() === 'profile') {
+      <section class="rounded-lg border border-white/10 bg-surface-card p-6 sm:p-8 shadow-xl">
+        <div class="mb-6">
+          <h2 class="font-headline-md text-lg text-on-surface flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary">local_shipping</span>
+            Dirección y Datos de Despacho
+          </h2>
+          <p class="text-xs text-on-surface-variant mt-1">
+            Estos datos se utilizarán automáticamente en el checkout para que tus compras sean instantáneas.
+          </p>
+        </div>
+
+        <form [formGroup]="profileForm" (ngSubmit)="saveProfileChanges()" class="space-y-4 max-w-xl">
+          <div>
+            <label class="block font-label-tech text-[10px] uppercase tracking-wider text-on-surface-variant mb-1.5">
+              Teléfono de Contacto / Celular *
+            </label>
+            <input
+              type="tel"
+              formControlName="phone"
+              placeholder="Ej. +591 71234567"
+              class="w-full rounded border bg-surface px-4 py-2.5 text-xs text-on-surface focus:outline-none transition-colors"
+              [class.border-error]="isFieldInvalid('phone')"
+              [class.focus:border-error]="isFieldInvalid('phone')"
+              [class.focus:ring-1]="isFieldInvalid('phone')"
+              [class.focus:ring-error/40]="isFieldInvalid('phone')"
+              [class.bg-error/5]="isFieldInvalid('phone')"
+              [class.border-white/10]="!isFieldInvalid('phone')"
+              [class.focus:border-primary]="!isFieldInvalid('phone')"
+            />
+            @if (isFieldInvalid('phone')) {
+              <p class="mt-1.5 flex items-center gap-1.5 text-[11px] text-error font-label-tech">
+                <span class="material-symbols-outlined text-[14px]">error</span>
+                <span>{{ getProfileError('phone') }}</span>
+              </p>
+            }
+          </div>
+
+          <div>
+            <label class="block font-label-tech text-[10px] uppercase tracking-wider text-on-surface-variant mb-1.5">
+              Dirección de Entrega Principal *
+            </label>
+            <input
+              type="text"
+              formControlName="address"
+              placeholder="Ej. Av. Principal #123, Calle 4"
+              class="w-full rounded border bg-surface px-4 py-2.5 text-xs text-on-surface focus:outline-none transition-colors"
+              [class.border-error]="isFieldInvalid('address')"
+              [class.focus:border-error]="isFieldInvalid('address')"
+              [class.focus:ring-1]="isFieldInvalid('address')"
+              [class.focus:ring-error/40]="isFieldInvalid('address')"
+              [class.bg-error/5]="isFieldInvalid('address')"
+              [class.border-white/10]="!isFieldInvalid('address')"
+              [class.focus:border-primary]="!isFieldInvalid('address')"
+            />
+            @if (isFieldInvalid('address')) {
+              <p class="mt-1.5 flex items-center gap-1.5 text-[11px] text-error font-label-tech">
+                <span class="material-symbols-outlined text-[14px]">error</span>
+                <span>{{ getProfileError('address') }}</span>
+              </p>
+            }
+          </div>
+
+          <div>
+            <label class="block font-label-tech text-[10px] uppercase tracking-wider text-on-surface-variant mb-1.5">
+              Ciudad / Departamento *
+            </label>
+            <select
+              formControlName="city"
+              class="w-full rounded border bg-surface px-4 py-2.5 text-xs text-on-surface focus:outline-none transition-colors"
+              [class.border-error]="isFieldInvalid('city')"
+              [class.focus:border-error]="isFieldInvalid('city')"
+              [class.focus:ring-1]="isFieldInvalid('city')"
+              [class.focus:ring-error/40]="isFieldInvalid('city')"
+              [class.bg-error/5]="isFieldInvalid('city')"
+              [class.border-white/10]="!isFieldInvalid('city')"
+              [class.focus:border-primary]="!isFieldInvalid('city')">
+              <option value="">Selecciona tu departamento en Bolivia</option>
+              @for (dept of boliviaDepartments; track dept) {
+                <option [value]="dept">{{ dept }}</option>
+              }
+            </select>
+            @if (isFieldInvalid('city')) {
+              <p class="mt-1.5 flex items-center gap-1.5 text-[11px] text-error font-label-tech">
+                <span class="material-symbols-outlined text-[14px]">error</span>
+                <span>{{ getProfileError('city') }}</span>
+              </p>
+            }
+          </div>
+
+          <div class="pt-4">
+            <button
+              type="submit"
+              [disabled]="isSavingProfile()"
+              class="iris-gradient-btn px-6 py-2.5 rounded text-xs font-bold text-white uppercase tracking-wider hover:opacity-90 transition-all cursor-pointer flex items-center gap-2">
+              @if (isSavingProfile()) {
+                <span class="inline-block h-3.5 w-3.5 animate-spin rounded-full border-2 border-white border-r-transparent"></span>
+                <span>Guardando...</span>
+              } @else {
+                <span class="material-symbols-outlined text-sm">save</span>
+                <span>Guardar Cambios</span>
+              }
+            </button>
+          </div>
+        </form>
+      </section>
+    }
+  }
+</main>

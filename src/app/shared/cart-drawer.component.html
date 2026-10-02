@@ -1,0 +1,83 @@
+@if (cart.isOpen()) {
+  <div 
+    (click)="cart.close()" 
+    class="fixed inset-0 z-60 bg-black/60 backdrop-blur-sm transition-opacity duration-300 animate-in fade-in">
+  </div>
+  <aside 
+    class="fixed top-0 right-0 z-70 flex h-full w-full flex-col border-l border-white/10 bg-surface-card shadow-2xl overscroll-contain sm:w-[450px] animate-slide-right">
+    <header class="flex shrink-0 items-center justify-between border-b border-white/10 p-6 bg-surface">
+      <div class="flex items-center gap-3">
+        <h2 class="m-0 font-headline-md text-headline-md text-on-surface">Tu Carrito</h2>
+        <span class="rounded bg-surface-container-high px-2 py-1 font-label-tech text-label-tech text-on-surface-variant">{{ cart.count() }} ARTÍCULOS</span>
+      </div>
+      <button 
+        type="button" 
+        (click)="cart.close()" 
+        aria-label="Cerrar carrito" 
+        class="text-on-surface-variant transition-colors hover:text-on-surface focus:outline-none">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+    </header>
+
+    <div class="flex-1 space-y-6 overflow-y-auto overscroll-contain p-6">
+      @if (cart.items().length) {
+        @for (item of cart.items(); track item.product.id; let last = $last) {
+          <article class="group relative flex gap-4 animate-fade-in-up">
+            <div class="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded border border-white/5 bg-surface-container-low">
+              <img [src]="item.product.image" [alt]="item.product.name" loading="lazy" class="h-full w-full object-cover opacity-80 mix-blend-lighten" />
+            </div>
+            <div class="flex flex-1 flex-col">
+              <div class="mb-1 flex items-start justify-between">
+                <h3 class="pr-4 font-body-lg text-body-lg font-semibold leading-tight text-on-surface">{{ item.product.name }}</h3>
+                <button type="button" (click)="cart.remove(item.product)" [attr.aria-label]="'Eliminar ' + item.product.name" class="text-on-surface-variant transition-colors hover:text-error">
+                  <span class="material-symbols-outlined text-[20px]">delete</span>
+                </button>
+              </div>
+              <p class="mb-3 font-label-tech text-label-tech text-primary">{{ item.product.subtitle }}</p>
+              <div class="mt-auto flex items-end justify-between">
+                <div class="flex items-center rounded border border-white/10 bg-surface-container-lowest">
+                  <button type="button" (click)="cart.change(item.product, -1)" aria-label="Reducir cantidad" class="px-2 py-1 text-on-surface-variant transition-colors hover:text-on-surface">
+                    <span class="material-symbols-outlined text-[16px]">remove</span>
+                  </button>
+                  <span class="w-8 px-2 text-center font-label-tech text-label-tech text-on-surface">{{ item.quantity }}</span>
+                  <button type="button" (click)="cart.change(item.product, 1)" aria-label="Aumentar cantidad" class="px-2 py-1 text-on-surface-variant transition-colors hover:text-on-surface">
+                    <span class="material-symbols-outlined text-[16px]">add</span>
+                  </button>
+                </div>
+                <span class="font-headline-md text-headline-md text-on-surface">{{ item.product.price * item.quantity | currency:'USD':'symbol':'1.2-2' }}</span>
+              </div>
+            </div>
+          </article>
+          @if (!last) { <hr class="border-white/5" /> }
+        }
+      } @else {
+        <div class="py-16 text-center">
+          <span class="material-symbols-outlined text-5xl text-on-surface-variant mb-2">shopping_bag</span>
+          <p class="text-on-surface-variant text-sm">Tu carrito está vacío.</p>
+        </div>
+      }
+    </div>
+
+    <footer class="shrink-0 border-t border-white/10 bg-surface-container p-6">
+      <div class="mb-6 flex items-center justify-between">
+        <span class="font-body-lg text-body-lg text-on-surface-variant">Subtotal</span>
+        <span class="font-price-display text-price-display text-on-surface">{{ cart.total() | currency:'USD':'symbol':'1.2-2' }}</span>
+      </div>
+      <p class="mb-6 text-center font-label-tech text-label-tech uppercase tracking-widest text-on-surface-variant opacity-70">Revisa y ajusta tus productos antes de enviar tu pedido.</p>
+      <div class="space-y-4">
+        <a routerLink="/cart" (click)="cart.close()" class="iris-gradient-bg iris-glow-hover flex w-full items-center justify-center gap-2 rounded py-4 font-headline-md text-[18px] text-white transition-all duration-300 hover:brightness-110">
+          Finalizar Compra
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
+        <a routerLink="/catalog" (click)="cart.close()" class="block w-full cursor-pointer border-none bg-transparent py-3 text-center font-body-md text-body-md text-on-surface transition-colors hover:text-primary">
+          Continuar Comprando
+        </a>
+      </div>
+      <div class="mt-8 flex justify-center border-t border-white/5 pt-4">
+        <a href="https://wa.me/59165807763?text=Hola%20Iris%20Computer%2C%20necesito%20ayuda%20con%20mi%20compra." target="_blank" rel="noopener noreferrer" (click)="cart.close()" class="flex items-center gap-2 font-label-tech text-label-tech uppercase text-on-surface-variant transition-colors hover:text-primary">
+          <span class="material-symbols-outlined text-[16px]">chat</span>¿Necesitas ayuda? Chatea por WhatsApp
+        </a>
+      </div>
+    </footer>
+  </aside>
+}

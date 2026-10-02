@@ -1,0 +1,53 @@
+schema: spec-driven
+
+context: |
+  Tech stack: Angular 20.3.0, TypeScript 5.9.2 (strict mode), Tailwind CSS v4.2.1, RxJS 7.8.0
+  Architecture: Feature-Driven Development (FDD) with standalone components, signals, inject()
+  Testing: Karma 6.4 + Jasmine 5.9 via ng test, karma-coverage, karma-chrome-launcher
+  Style: Tailwind CSS v4 with @theme directive, no tailwind.config.js, Prettier
+  Backend: JSON Server (mock), Express 5.1 (SSR)
+
+rules:
+  proposal:
+    - Include rollback plan for risky changes
+    - Validate against DESIGN.md and DESIGN-CUSTOMER-REVIEWS.md
+  specs:
+    - Use Given/When/Then for scenarios
+    - Use RFC 2119 keywords (MUST, SHALL, SHOULD, MAY)
+    - Follow FDD domain structure (home, catalog, product, cart, wishlist, about, entrepreneurs, auth, account, pages)
+  design:
+    - Include sequence diagrams for complex flows
+    - Document architecture decisions with rationale
+    - Respect Angular standalone component pattern
+  tasks:
+    - Group by phase, use hierarchical numbering
+    - Keep tasks completable in one session
+  apply:
+    guidelines:
+      - Follow existing code patterns
+      - Use signals, inject(), standalone components
+      - Mobile-first, accessible
+    tdd: true
+    test_command: "ng test"
+  verify:
+    test_command: "ng test"
+    build_command: "npm run build"
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas
+
+testing:
+  runner: karma
+  framework: jasmine
+  command: "ng test"
+  builder: "@angular/build:karma"
+  coverage:
+    tool: karma-coverage
+    threshold: 0
+  browser: chromium
+  layers:
+    - unit
+  linter: null
+  type_checker: typescript
+  formatter: prettier
+  strict_tdd: true

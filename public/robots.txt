@@ -1,0 +1,14 @@
+# Iris Computer Store — robots.txt
+# https://iriscoputer.com/robots.txt
+
+User-agent: *
+Allow: /
+Disallow: /cart
+Disallow: /wishlist
+Disallow: /checkout
+Disallow: /auth
+Disallow: /account
+Disallow: /cart-preview
+
+# Sitemap
+Sitemap: https://iriscoputer.com/sitemap.xml

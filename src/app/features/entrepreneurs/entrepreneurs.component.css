@@ -1,0 +1,34 @@
+@reference "../../../styles.css";
+
+/* ============================================
+   Emprendedores Component - Open Design Styles
+   ============================================ */
+
+/* Bento Grid: natural height on mobile/tablet, equal rows on desktop */
+.bento-grid { grid-auto-rows: auto; }
+@media (min-width: 1024px) { .bento-grid { grid-auto-rows: 1fr; } }
+
+/* Bento large items: span 2 cols only on desktop */
+.bento-large { grid-column: span 1; }
+@media (min-width: 1024px) { .bento-large { grid-column: span 2; } }
+
+/* Principle block — left bar gradient on hover */
+.principle-block { position: relative; overflow: hidden; }
+.principle-block::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 100%; background: linear-gradient(180deg, var(--color-primary-container), var(--color-primary)); opacity: 0; transition: opacity 0.3s ease; }
+.principle-block:hover::before { opacity: 1; }
+
+/* Video thumbnail with play button overlay */
+.video-thumb { position: relative; overflow: hidden; border-radius: 12px; }
+.video-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,12,0.8) 0%, transparent 50%); }
+.video-thumb .play-btn { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 10; width: 56px; height: 56px; border-radius: 50%; background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; }
+.video-thumb:hover .play-btn { background: rgba(63,81,181,0.8); border-color: var(--color-primary); transform: translate(-50%, -50%) scale(1.1); }
+
+/* Story card hover effects */
+.story-card { transition: all 0.2s ease; cursor: pointer; }
+.story-card:hover .story-image { transform: scale(1.03); }
+.story-image { transition: transform 0.5s ease; }
+
+/* Focus visible para accesibilidad en cards clickeables */
+article:focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-surface-card;
+}

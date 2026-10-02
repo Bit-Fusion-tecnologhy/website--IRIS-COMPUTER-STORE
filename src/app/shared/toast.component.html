@@ -1,0 +1,41 @@
+<aside 
+  aria-live="polite" 
+  class="fixed bottom-6 right-6 z-90 flex flex-col gap-3 max-w-sm pointer-events-none">
+  @for (toast of toastService.toasts(); track toast.id) {
+    <div 
+      class="pointer-events-auto flex items-center justify-between gap-3 p-4 rounded border backdrop-blur-md shadow-2xl transition-all duration-300 animate-in fade-in slide-in-from-bottom-5"
+      [class.bg-surface-card]="toast.type === 'info'"
+      [class.border-white/20]="toast.type === 'info'"
+      [class.bg-surface-card]="toast.type === 'success'"
+      [class.border-primary/50]="toast.type === 'success'"
+      [class.bg-error-container/40]="toast.type === 'error'"
+      [class.border-error/40]="toast.type === 'error'"
+      [class.bg-surface-card]="toast.type === 'warning'"
+      [class.border-amber-500/50]="toast.type === 'warning'">
+      
+      <div class="flex items-center gap-3">
+        @if (toast.type === 'success') {
+          <i class="material-symbols-outlined text-primary text-xl">check_circle</i>
+        } @else if (toast.type === 'error') {
+          <i class="material-symbols-outlined text-error text-xl">error</i>
+        } @else if (toast.type === 'warning') {
+          <i class="material-symbols-outlined text-amber-400 text-xl">warning</i>
+        } @else {
+          <i class="material-symbols-outlined text-primary text-xl">info</i>
+        }
+        
+        <p class="text-xs font-medium text-on-surface leading-tight">
+          {{ toast.message }}
+        </p>
+      </div>
+
+      <button 
+        type="button" 
+        (click)="toastService.remove(toast.id)" 
+        class="text-on-surface-variant hover:text-white transition-colors p-1" 
+        aria-label="Cerrar notificación">
+        <i class="material-symbols-outlined text-sm">close</i>
+      </button>
+    </div>
+  }
+</aside>

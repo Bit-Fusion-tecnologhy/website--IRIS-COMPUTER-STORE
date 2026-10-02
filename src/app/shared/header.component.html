@@ -1,0 +1,226 @@
+<header class="fixed top-0 z-50 w-full border-b border-white/10 bg-surface/80 shadow-sm backdrop-blur-md">
+  <div class="mx-auto flex h-20 max-w-container-max items-center justify-between px-gutter">
+    <!-- Logo -->
+    <a routerLink="/" (click)="closeMobileMenu()" class="flex cursor-pointer items-center gap-4 transition-all hover:opacity-80 active:scale-95 shrink-0">
+      <img src="/logo/iris.jpeg" alt="Iris Computer Logo" class="h-10 w-auto rounded-sm" />
+      <span class="hidden bg-iris-gradient bg-clip-text font-headline-md text-headline-md font-bold text-transparent sm:block">
+        Iris Computer
+      </span>
+    </a>
+
+    <!-- Desktop Nav: Inicio, Productos, Emprendedores, Acerca de Nosotros -->
+    <nav class="hidden h-full items-center gap-5 xl:gap-8 lg:flex shrink-0">
+      <a 
+        routerLink="/" 
+        routerLinkActive="active-tab" 
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="header-tab">
+        Inicio
+      </a>
+      <a 
+        routerLink="/catalog" 
+        routerLinkActive="active-tab"
+        [class.active-tab]="isCatalogActive()"
+        class="header-tab">
+        Productos
+      </a>
+      <a 
+        routerLink="/emprendedores" 
+        routerLinkActive="active-tab"
+        [class.active-tab]="isEntrepreneursActive()"
+        class="header-tab">
+        Emprendedores
+      </a>
+      <a 
+        routerLink="/about" 
+        routerLinkActive="active-tab"
+        class="header-tab">
+        Acerca de Nosotros
+      </a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-3 sm:gap-5 shrink-0">
+      <a routerLink="/catalog" aria-label="Search" class="header-action">
+        <span class="material-symbols-outlined">search</span>
+      </a>
+
+      <!-- Wishlist Link with Reactive Badge -->
+      <a 
+        routerLink="/wishlist" 
+        aria-label="Wishlist" 
+        class="header-action relative flex items-center justify-center p-1.5 rounded hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined text-2xl" [class.text-primary]="wishlist.count() > 0">favorite</span>
+        @if (wishlist.count() > 0) {
+          <span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary font-label-tech text-[10px] font-bold text-white shadow-md animate-pulse">
+            {{ wishlist.count() }}
+          </span>
+        }
+      </a>
+
+      <!-- Cart Trigger Button with Reactive Badge -->
+      <button 
+        type="button" 
+        (click)="cart.open()" 
+        aria-label="Open Cart" 
+        class="header-action relative flex items-center justify-center p-1.5 rounded hover:bg-white/5 transition-colors">
+        <span class="material-symbols-outlined text-2xl">shopping_cart</span>
+        @if (cart.count() > 0) {
+          <span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary font-label-tech text-[10px] font-bold text-white shadow-md animate-pulse">
+            {{ cart.count() }}
+          </span>
+        }
+      </button>
+
+      <!-- Desktop Auth Section -->
+      @if (auth.isAuthenticated()) {
+        <div class="relative user-menu-container">
+          <button
+            type="button"
+            (click)="toggleUserMenu()"
+            class="flex items-center gap-2 py-1 px-2.5 rounded border border-white/10 hover:border-primary/40 bg-white/5 hover:bg-primary/10 text-xs font-label-tech text-on-surface transition-all cursor-pointer">
+            <span class="flex h-6 w-6 items-center justify-center rounded-full bg-primary/20 text-primary font-bold text-[11px]">
+              {{ auth.userFullName().charAt(0).toUpperCase() }}
+            </span>
+            <span class="hidden xl:inline max-w-[100px] truncate text-[11px] uppercase tracking-wider text-on-surface">
+              {{ auth.userFullName() }}
+            </span>
+            <span class="material-symbols-outlined text-sm text-on-surface-variant transition-transform" [class.rotate-180]="isUserMenuOpen()">
+              expand_more
+            </span>
+          </button>
+
+          <!-- Dropdown Menu -->
+          @if (isUserMenuOpen()) {
+            <div class="absolute right-0 mt-2 w-56 rounded border border-white/10 bg-surface-card p-2 shadow-2xl backdrop-blur-md z-50 animate-fade-in-up">
+              <div class="px-3 py-2 border-b border-white/10 mb-1">
+                <p class="font-bold text-xs text-on-surface truncate">{{ auth.userFullName() }}</p>
+                <p class="text-[10px] text-on-surface-variant font-mono truncate">{{ auth.userEmail() }}</p>
+              </div>
+
+              <a
+                routerLink="/account"
+                (click)="closeUserMenu()"
+                class="flex items-center gap-2.5 px-3 py-2 rounded text-xs font-label-tech uppercase tracking-wider text-on-surface hover:text-primary hover:bg-white/5 transition-colors">
+                <span class="material-symbols-outlined text-base text-primary">receipt_long</span>
+                <span>Mis Compras</span>
+              </a>
+
+              <div class="my-1 border-t border-white/10"></div>
+
+              <button
+                type="button"
+                (click)="logout()"
+                class="w-full flex items-center gap-2.5 px-3 py-2 rounded text-xs font-label-tech uppercase tracking-wider text-error/90 hover:text-error hover:bg-error/10 transition-colors cursor-pointer text-left">
+                <span class="material-symbols-outlined text-base">logout</span>
+                <span>Cerrar Sesión</span>
+              </button>
+            </div>
+          }
+        </div>
+      } @else {
+        <a
+          routerLink="/auth"
+          aria-label="Iniciar Sesión"
+          title="Iniciar Sesión"
+          class="header-action flex items-center justify-center">
+          <span class="material-symbols-outlined text-2xl">person</span>
+        </a>
+      }
+
+      <!-- Mobile Menu Toggle Button -->
+      <button 
+        type="button" 
+        (click)="toggleMobileMenu()" 
+        aria-label="Menu" 
+        class="header-action lg:hidden">
+        <span class="material-symbols-outlined">{{ isMobileMenuOpen() ? 'close' : 'menu' }}</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Navigation -->
+  @if (isMobileMenuOpen()) {
+    <div class="border-t border-white/10 bg-surface-card px-6 py-5 lg:hidden animate-in fade-in slide-in-from-top-2">
+      <nav class="flex flex-col gap-2">
+        <a 
+          routerLink="/" 
+          (click)="closeMobileMenu()" 
+          routerLinkActive="mobile-active-tab" 
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="mobile-nav-link">
+          <i class="material-symbols-outlined text-base">home</i>
+          Inicio
+        </a>
+        <a 
+          routerLink="/catalog" 
+          (click)="closeMobileMenu()" 
+          routerLinkActive="mobile-active-tab"
+          [class.mobile-active-tab]="isCatalogActive()"
+          class="mobile-nav-link">
+          <i class="material-symbols-outlined text-base">grid_view</i>
+          Productos
+        </a>
+        <a 
+          routerLink="/emprendedores" 
+          (click)="closeMobileMenu()" 
+          routerLinkActive="mobile-active-tab"
+          [class.mobile-active-tab]="isEntrepreneursActive()"
+          class="mobile-nav-link">
+          <i class="material-symbols-outlined text-base">groups</i>
+          Emprendedores
+        </a>
+        <a 
+          routerLink="/about" 
+          (click)="closeMobileMenu()" 
+          routerLinkActive="mobile-active-tab"
+          class="mobile-nav-link">
+          <i class="material-symbols-outlined text-base">corporate_fare</i>
+          Acerca de Nosotros
+        </a>
+        <a 
+          routerLink="/contact" 
+          (click)="closeMobileMenu()" 
+          routerLinkActive="mobile-active-tab"
+          class="mobile-nav-link">
+          <i class="material-symbols-outlined text-base">support_agent</i>
+          Contacto y Soporte
+        </a>
+
+        <!-- Mobile User Section -->
+        @if (auth.isAuthenticated()) {
+          <div class="mt-2 pt-3 border-t border-white/10">
+            <div class="px-2 py-1 mb-2">
+              <p class="font-bold text-xs text-on-surface truncate">{{ auth.userFullName() }}</p>
+              <p class="text-[10px] text-on-surface-variant font-mono truncate">{{ auth.userEmail() }}</p>
+            </div>
+            <a 
+              routerLink="/account" 
+              (click)="closeMobileMenu()" 
+              routerLinkActive="mobile-active-tab"
+              class="mobile-nav-link text-primary">
+              <i class="material-symbols-outlined text-base">receipt_long</i>
+              Mis Compras
+            </a>
+            <button 
+              type="button"
+              (click)="logout()" 
+              class="w-full mobile-nav-link text-error hover:bg-error/10 text-left cursor-pointer">
+              <i class="material-symbols-outlined text-base">logout</i>
+              Cerrar Sesión
+            </button>
+          </div>
+        } @else {
+          <a 
+            routerLink="/auth" 
+            (click)="closeMobileMenu()" 
+            routerLinkActive="mobile-active-tab"
+            class="mobile-nav-link border-t border-white/10 pt-3 text-primary">
+            <i class="material-symbols-outlined text-base">login</i>
+            Iniciar Sesión / Registro
+          </a>
+        }
+      </nav>
+    </div>
+  }
+</header>

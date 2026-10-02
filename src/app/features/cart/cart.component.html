@@ -1,0 +1,77 @@
+<main class="mx-auto w-full max-w-container-max px-4 pt-[104px] pb-section-gap md:px-gutter">
+  <div class="mb-8">
+    <h1 class="mb-2 font-headline-xl text-headline-xl text-on-surface">Tu Carrito</h1>
+    <p class="font-body-md text-body-md text-on-surface-variant">Revisa tus artículos de alto rendimiento antes de
+      finalizar la compra.</p>
+  </div>
+  @if (cart.items().length) {
+  <div class="grid grid-cols-1 gap-8 lg:grid-cols-12">
+    <section class="flex flex-col gap-4 lg:col-span-8">@for (item of cart.items(); track item.product.id) { <article
+        class="group relative flex flex-col items-center gap-6 overflow-hidden rounded border border-white/10 bg-surface-card p-4 transition-colors duration-300 hover:border-primary/50 sm:flex-row sm:items-start">
+        <div
+          class="iris-gradient-bg absolute top-0 left-0 h-[2px] w-full opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        </div>
+        <div
+          class="flex h-32 w-32 shrink-0 items-center justify-center overflow-hidden rounded border border-white/5 bg-surface-container-low">
+          <img [src]="item.product.image" [alt]="item.product.name" loading="lazy" decoding="async"
+            class="h-full w-full object-cover" />
+        </div>
+        <div class="flex h-full w-full flex-grow flex-col justify-between">
+          <div><span
+              class="mb-2 inline-block bg-surface-container-high px-2 py-1 font-label-tech text-label-tech uppercase tracking-widest text-on-surface-variant">{{
+              item.product.category }}</span>
+            <h2 class="mb-1 font-headline-md text-headline-md text-on-surface">{{ item.product.name }}</h2>
+            <p class="line-clamp-2 text-sm text-on-surface-variant/80">{{ item.product.description }}</p>
+          </div>
+          <div class="mt-4 flex w-full flex-wrap items-center justify-between gap-4">
+            <div class="flex h-10 items-center rounded border border-white/10 bg-surface-container-low"><button
+                type="button" (click)="cart.change(item.product, -1)"
+                class="flex h-full w-10 items-center justify-center text-on-surface-variant hover:bg-white/5 hover:text-on-surface"><span
+                  class="material-symbols-outlined text-sm">remove</span></button><span
+                class="w-10 text-center font-label-tech text-label-tech text-on-surface">{{ item.quantity
+                }}</span><button type="button" (click)="cart.change(item.product, 1)"
+                class="flex h-full w-10 items-center justify-center text-on-surface-variant hover:bg-white/5 hover:text-on-surface"><span
+                  class="material-symbols-outlined text-sm">add</span></button></div>
+            <div class="flex items-center gap-4"><span class="font-price-display text-price-display text-on-surface">{{
+                item.product.price * item.quantity | currency:'USD':'symbol':'1.2-2' }}</span><button type="button"
+                (click)="cart.remove(item.product)" class="p-2 text-on-surface-variant hover:text-error"><span
+                  class="material-symbols-outlined">delete</span></button></div>
+          </div>
+        </div>
+      </article> }
+    </section>
+    <aside class="lg:col-span-4">
+      <div class="sticky top-24 rounded border border-white/10 bg-surface-card p-6">
+        <h2 class="mb-6 border-b border-white/10 pb-4 font-headline-lg text-headline-lg text-on-surface">Resumen</h2>
+        <div class="mb-6 space-y-4 font-body-md text-body-md">
+          <div class="flex justify-between text-on-surface-variant"><span>Subtotal ({{ cart.count() }}
+              artículos)</span><span class="text-on-surface">{{ cart.total() | currency:'USD':'symbol':'1.2-2' }}</span>
+          </div>
+          <div class="flex justify-between text-on-surface-variant"><span>Costo de envío</span><span
+              class="text-on-surface">A coordinar por WhatsApp</span></div>
+          <div class="flex justify-between text-on-surface-variant"><span>Impuestos estimados</span><span
+              class="text-on-surface">{{ estimatedTax() | currency:'USD':'symbol':'1.2-2' }}</span></div>
+        </div>
+        <div class="mb-8 border-t border-white/10 pt-4">
+          <div class="flex items-end justify-between"><span
+              class="font-headline-md text-headline-md text-on-surface">Total estimado</span><span
+              class="font-price-display text-price-display text-primary">{{ totalWithTax() |
+              currency:'USD':'symbol':'1.2-2' }}</span></div>
+        </div><a href="https://wa.me/59165807763?text=Hola%20Iris%20Computer%2C%20quiero%20finalizar%20mi%20compra."
+          target="_blank" rel="noopener noreferrer"
+          class="iris-gradient-bg mb-4 flex w-full items-center justify-center gap-2 rounded py-4 font-label-tech text-label-tech uppercase tracking-widest text-white hover:brightness-110"><span
+            class="material-symbols-outlined text-sm">chat</span>Finalizar por WhatsApp</a>
+        <div class="flex items-start gap-3 rounded bg-surface-container-lowest p-3 text-sm text-on-surface-variant/70">
+          <span class="material-symbols-outlined shrink-0 text-lg">shield</span>
+          <p>Confirmaremos los detalles de tu pedido directamente por WhatsApp.</p>
+        </div>
+      </div>
+    </aside>
+  </div>
+  } @else { <section class="rounded border border-dashed border-white/10 bg-surface-card p-16 text-center"><span
+      class="material-symbols-outlined text-5xl text-primary">shopping_cart</span>
+    <p class="mt-4 text-on-surface-variant">Tu carrito está listo para hardware de precisión.</p><a
+      routerLink="/catalog" class="mt-6 inline-flex items-center gap-2 text-primary">Explorar catálogo <span
+        class="material-symbols-outlined">arrow_forward</span></a>
+  </section> }
+</main>

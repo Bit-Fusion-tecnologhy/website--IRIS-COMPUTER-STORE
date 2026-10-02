@@ -1,0 +1,44 @@
+.hero-slide-badge.sale {
+  background: var(--color-error);
+  color: white;
+}
+.hero-slide-badge.new {
+  background: var(--color-accent-cyan);
+  color: white;
+}
+.hero-slide-badge.hot {
+  background: #ff6b35;
+  color: white;
+}
+
+/* Hero slide image — matching HTML design */
+.hero-slide-image img {
+  max-height: 300px;
+  width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 40px rgba(0, 0, 0, 0.4));
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-slide:hover .hero-slide-image img {
+  transform: scale(1.08) rotate(-2deg);
+  filter: drop-shadow(0 16px 48px rgba(63, 81, 181, 0.3));
+}
+
+/* Glow effect behind image */
+.hero-slide-image::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(63, 81, 181, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+  .hero-slide-image img {
+    max-height: 180px;
+  }
+}

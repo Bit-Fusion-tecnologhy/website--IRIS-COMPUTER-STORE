@@ -1,0 +1,32 @@
+/* Home component overrides — components own their styles */
+
+.gpu-showcase-stage { position: relative; width: 100%; height: 200px; overflow: hidden; perspective: 1000px; contain: layout paint; }
+@media (min-width: 640px) { .gpu-showcase-stage { height: 240px; } }
+@media (min-width: 1024px) { .gpu-showcase-stage { height: 270px; } }
+
+.gpu-slide-item {
+  position: absolute; inset: 0; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden; transform: translate3d(100vw, 0, 0); will-change: transform; pointer-events: none; opacity: 0;
+}
+.gpu-slide-item.is-active,
+.gpu-slide-item.gpu-traverse-track { pointer-events: auto; }
+.gpu-slide-item.gpu-traverse-track { animation: gpuContinuousTraverse 3.2s linear forwards; }
+.gpu-slide-item.gpu-manual-exit { animation: gpuQuickExit 0.35s cubic-bezier(0.68, 0, 0.88, 0.2) forwards !important; }
+.is-paused .gpu-slide-item.gpu-traverse-track,
+.gpu-showcase-stage:hover .gpu-slide-item.gpu-traverse-track { animation-play-state: paused; }
+
+@keyframes gpuContinuousTraverse {
+  0% { transform: translate3d(100vw, 0, 0); opacity: 0; animation-timing-function: cubic-bezier(0.12, 0.8, 0.32, 1); }
+  18% { transform: translate3d(12vw, 0, 0); opacity: 1; animation-timing-function: linear; }
+  78% { transform: translate3d(-12vw, 0, 0); opacity: 1; animation-timing-function: cubic-bezier(0.68, 0, 0.88, 0.2); }
+  100% { transform: translate3d(-100vw, 0, 0); opacity: 0; }
+}
+
+@keyframes gpuQuickExit {
+  to { transform: translate3d(-100vw, 0, 0); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gpu-slide-item.gpu-traverse-track { animation: none; transform: translate3d(0, 0, 0); opacity: 1; }
+  .gpu-slide-item.gpu-manual-exit { animation: none; opacity: 0; }
+}
